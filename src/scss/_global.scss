@@ -1,0 +1,88 @@
+@font-face {
+  font-family: "SourceSansPro";
+  src: url("assets/fonts/SourceSansPro-Regular.ttf");
+}
+
+.primary-button {
+  width: 100px;
+  height: 40px;
+  border-radius: 5%;
+  background: #1e69f6 !important;
+  border-color: #1e69f6 !important;
+  color: #ffffff;
+  &.selected {
+    background: #ffffff !important;
+    color: #1e69f6;
+  }
+}
+
+.modal-content {
+  border-radius: 15px;
+  display: flow-root;
+  border: 0px;
+  width: fit-content;
+}
+
+.logo-container img {
+  max-width: 250px;
+}
+
+// override ng-tabs
+
+.nav-tabs .nav-link.active {
+  background-color: transparent;
+  border: none;
+}
+
+.default-selected-option {
+  color: #c4c4c4;
+  font-size: 15px;
+  line-height: 18px;
+  text-align: left;
+}
+
+.custom-dropdown-select {
+  &.ng-invalid,
+  &.ng-untouched {
+    color: #c4c4c4 !important;
+    font-size: 15px;
+    line-height: 18px;
+    text-align: left;
+  }
+}
+
+.invalid-feedback {
+  padding-left: 10px;
+  color: #fff;
+}
+.modal-content {
+  border-radius: 15px;
+  display: flow-root;
+  position: fixed;
+  left: 30%;
+  top: 30%;
+  width: max-content !important;
+}
+ngx-spinner > div {
+  position: relative !important;
+}
+div.container.modal-header {
+  padding-bottom: 0px;
+}
+div.modal-body {
+  padding-top: 0px;
+}
+
+.alert-custom-confirm-button {
+  width: 124px;
+  height: 40px;
+  border-radius: 3px !important;
+  border: 2px solid #1c67f5 !important;
+  background: transparent !important;
+  color: #1c67f5 !important;
+  margin-top: 40px !important;
+}
+
+.swal2-popup .swal2-title {
+  margin-bottom: 30px !important;
+}

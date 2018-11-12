@@ -24,7 +24,8 @@ export class AuthenticationService {
   });
 
   public constructor(private _http: HttpClient, private _sessionService: SessionService) {
-    this.actionUrl = `${Constants.apiHost}${Constants.apiPrefix}login`;
+    this.actionUrl = `${Constants.apiPrefix}login`;
+    console.log(Constants.apiHost, Constants.apiPrefix, this.actionUrl);
     // set token if saved in local storage
     this.token = this.getToken();
   }
@@ -97,18 +98,6 @@ export class AuthenticationService {
     return userData || null;
   }
 
-  private getTokenExpirationDate(token: string): Date {
-    const decoded = jwt_decode(token);
-    if (decoded['exp'] === undefined) {
-      return null;
-    }
-
-    const date = new Date(0);
-    date.setUTCSeconds(decoded['exp']);
-
-    return date;
-  }
-
   public isTokenExpired(token?: string): boolean {
     if (!token) {
       token = this.getToken();
@@ -123,5 +112,17 @@ export class AuthenticationService {
     }
 
     return !(date.valueOf() > new Date().valueOf());
+  }
+
+  private getTokenExpirationDate(token: string): Date {
+    const decoded = jwt_decode(token);
+    if (decoded['exp'] === undefined) {
+      return null;
+    }
+
+    const date = new Date(0);
+    date.setUTCSeconds(decoded['exp']);
+
+    return date;
   }
 }

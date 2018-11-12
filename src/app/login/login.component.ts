@@ -56,8 +56,10 @@ export class LoginComponent implements OnInit {
       )
       .subscribe(
         result => {
-          const user = JSON.parse(localStorage.getItem(USER_KEY));
-          this.router.navigate(['/'], { replaceUrl: true });
+          console.log('success', result);
+          this.route.queryParams.subscribe(params =>
+            this.router.navigate([params.redirect || '/'], { replaceUrl: true })
+          );
         },
         error => {
           log.debug(`Login error: ${error}`);

@@ -16,6 +16,10 @@ import { LoginModule } from './login/login.module';
 import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
+import { AuthenticationService } from '@app/services/authentication.service';
+import { AlertModalService } from '@app/services/alert-modal.service';
+import { ChangePasswordService } from '@app/services/change-password.service';
+
 @NgModule({
   imports: [
     BrowserModule,
@@ -33,7 +37,7 @@ import { AppRoutingModule } from './app-routing.module';
     AppRoutingModule // must be imported as the last module as it contains the fallback route
   ],
   declarations: [AppComponent],
-  providers: [],
+  providers: [AuthenticationService, AlertModalService, ChangePasswordService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

@@ -1,0 +1,38 @@
+.footer-static {
+  position: fixed;
+  bottom: 0;
+  height: 70px;
+  background-color: #fff;
+  border-top: 1px solid #f6f7fc;
+  padding: 3px;
+  -webkit-box-shadow: 1px 0 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 1px 0 20px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  z-index: 1001;
+}
+
+p {
+  line-height: 58px;
+  font-family: Lato;
+  font-style: normal;
+  font-weight: 300;
+  font-size: 13px;
+  color: #556486;
+  a {
+    padding: 0;
+    color: #556486;
+  }
+}
+.link-block {
+  font-size: 12px;
+  a {
+    padding: 0 12px;
+  }
+}
+.social-icons-container {
+  a {
+    margin: 0 9px;
+    color: #000000;
+    font-size: 18px;
+  }
+}

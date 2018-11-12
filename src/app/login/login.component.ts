@@ -1,10 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+import { AuthenticationService } from '@app/services/authentication.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { finalize } from 'rxjs/operators';
+import { USER_KEY } from '@app/services/authentication.service';
 
 import { environment } from '@env/environment';
-import { Logger, I18nService, AuthenticationService } from '@app/core';
+import { Logger, I18nService } from '@app/core';
 
 const log = new Logger('Login');
 
@@ -18,6 +20,7 @@ export class LoginComponent implements OnInit {
   error: string;
   loginForm: FormGroup;
   isLoading = false;
+  submitted = false;
 
   constructor(
     private router: Router,
@@ -29,12 +32,22 @@ export class LoginComponent implements OnInit {
     this.createForm();
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    const user = JSON.parse(localStorage.getItem(USER_KEY));
+    if (user && !this.authenticationService.isTokenExpired()) {
+      this.router.navigate(['/'], { replaceUrl: true });
+    }
+  }
 
   login() {
     this.isLoading = true;
+    this.submitted = true;
+    if (this.loginForm.invalid) {
+      return;
+    }
+
     this.authenticationService
-      .login(this.loginForm.value)
+      .login(this.loginForm.value['email'], this.loginForm.value['password'])
       .pipe(
         finalize(() => {
           this.loginForm.markAsPristine();
@@ -42,17 +55,25 @@ export class LoginComponent implements OnInit {
         })
       )
       .subscribe(
-        credentials => {
-          log.debug(`${credentials.username} successfully logged in`);
+        result => {
+          console.log('success', result);
           this.route.queryParams.subscribe(params =>
             this.router.navigate([params.redirect || '/'], { replaceUrl: true })
           );
         },
         error => {
           log.debug(`Login error: ${error}`);
-          this.error = error;
+          if (error && error.error['message']) {
+            this.error = error.error['message'];
+          } else {
+            console.log(error);
+          }
         }
       );
+  }
+
+  get f() {
+    return this.loginForm.controls;
   }
 
   setLanguage(language: string) {
@@ -69,7 +90,7 @@ export class LoginComponent implements OnInit {
 
   private createForm() {
     this.loginForm = this.formBuilder.group({
-      username: ['', Validators.required],
+      email: ['', Validators.required],
       password: ['', Validators.required],
       remember: true
     });

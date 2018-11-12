@@ -8,9 +8,9 @@
   "Logout": "Déconnexion",
   "Password": "Mot de passe",
   "Password is required": "Mot de passe requis",
-  "Username": "Identifiant",
-  "Username is required": "Identifiant requis",
-  "Username or password incorrect.": "Identifiant ou mot de passe incorrect.",
+  "Email": "Identifiant",
+  "Email is required": "Identifiant requis",
+  "Email or password incorrect.": "Identifiant ou mot de passe incorrect.",
   "Remember me": "Rester connecté",
   "Version": "Version"
 }

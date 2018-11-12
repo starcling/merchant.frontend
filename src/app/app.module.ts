@@ -17,7 +17,6 @@ import { AppComponent } from './app.component';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AuthenticationService } from '@app/services/authentication.service';
-import { ApiKeyService } from '@app/services/apiKey.service';
 import { AlertModalService } from '@app/services/alert-modal.service';
 import { ChangePasswordService } from '@app/services/change-password.service';
 
@@ -38,7 +37,7 @@ import { ChangePasswordService } from '@app/services/change-password.service';
     AppRoutingModule // must be imported as the last module as it contains the fallback route
   ],
   declarations: [AppComponent],
-  providers: [AuthenticationService, ApiKeyService, AlertModalService, ChangePasswordService],
+  providers: [AuthenticationService, AlertModalService, ChangePasswordService],
   bootstrap: [AppComponent]
 })
 export class AppModule {}

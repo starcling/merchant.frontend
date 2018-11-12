@@ -15,22 +15,4 @@ export abstract class HttpRequest {
       await this.authService.getToken();
     }
   }
-
-  protected basicAuthorizationHeader(): {} {
-    if (this.authService) {
-      return { headers: this.authService.createAuthorizationHeader() };
-    }
-
-    return {};
-  }
-
-  protected apiKeyAuthorizationHeader(): {} {
-    if (this.authService) {
-      return { headers: this.authService.createApiKeyHeader() };
-    }
-
-    return {};
-  }
-
-  public abstract getResult(): Observable<HttpResponse>;
 }

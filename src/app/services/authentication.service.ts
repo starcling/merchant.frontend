@@ -11,7 +11,6 @@ import { SessionService } from '@app/services/session.service';
 
 export const TOKEN_KEY = Constants.TOKEN_KEY;
 export const USER_KEY = Constants.USER_KEY;
-export const API_KEY = Constants.API_KEY;
 export interface Credentials {
   // Customize received credentials here
   email: string;
@@ -87,14 +86,6 @@ export class AuthenticationService {
     return headers;
   }
 
-  public createApiKeyHeader(): HttpHeaders {
-    let headers = new HttpHeaders();
-    headers = headers.append(API_KEY, this.getApiKey());
-    headers = headers.append('Content-Type', 'application/json');
-
-    return headers;
-  }
-
   public removeLocalStorage(): void {
     localStorage.removeItem(USER_KEY);
     localStorage.removeItem(TOKEN_KEY);
@@ -110,11 +101,6 @@ export class AuthenticationService {
   public getToken(): string {
     const userToken = JSON.parse(localStorage.getItem(TOKEN_KEY));
     return userToken ? userToken.token : null;
-  }
-
-  public getApiKey(): string {
-    const apiKey = localStorage.getItem(API_KEY);
-    return apiKey ? apiKey : null;
   }
 
   public getUserData(): string {

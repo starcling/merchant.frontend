@@ -10,6 +10,16 @@ export abstract class HttpRequest {
     this.getAuthHeader();
   }
 
+  public abstract getResult(): Observable<HttpResponse>;
+
+  protected basicAuthorizationHeader(): {} {
+    if (this.authService) {
+      return { headers: this.authService.createAuthorizationHeader() };
+    }
+
+    return {};
+  }
+
   private async getAuthHeader(): Promise<void> {
     if (this.authService) {
       await this.authService.getToken();

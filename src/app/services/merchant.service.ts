@@ -19,10 +19,6 @@ export class MerchantService {
     this.actionUrl = `${Constants.apiHost}${Constants.apiPrefix}merchant/`;
   }
 
-  public getMerchantDetails(merchantID: string): Observable<any> {
-    return new HttpGetRequest(this.http, this.actionUrl + merchantID, this.authService).getResultWithApiKey();
-  }
-
   public deleteMerchant(merchantID: string): Observable<any> {
     return new HttpDeleteRequest(this.http, this.actionUrl + 'delete/' + merchantID).getResult();
   }

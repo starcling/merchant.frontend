@@ -12,15 +12,4 @@ export class HttpGetRequest extends HttpRequest {
   public getResult(): Observable<any> {
     return this.http.get(this.actionUrl, this.basicAuthorizationHeader());
   }
-
-  public getResultWithApiKey(): Observable<any> {
-    return this.http.get(this.actionUrl, this.apiKeyAuthorizationHeader());
-  }
-
-  public getResultWithFCMMobileToken(fcmMobilToken: string): Observable<any> {
-    let headers = new HttpHeaders();
-    headers = headers.append(Constants.MOBILE_TOKEN_KEY, fcmMobilToken);
-    headers = headers.append('Content-Type', 'application/json');
-    return this.http.get(this.actionUrl, { headers });
-  }
 }

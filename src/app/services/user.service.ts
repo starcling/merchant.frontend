@@ -21,11 +21,6 @@ export class UserService {
   public createUser(createUserDetails: CreateUser): Observable<any> {
     return new HttpPostRequest(this.http, this.actionUrl, createUserDetails).getResult();
   }
-
-  public getUserDetails(userID: string): Observable<any> {
-    return new HttpGetRequest(this.http, this.actionUrl + userID).getResultWithApiKey();
-  }
-
   public deleteUserDetails(userID: string): Observable<any> {
     return new HttpDeleteRequest(this.http, this.actionUrl + 'delete/' + userID).getResult();
   }

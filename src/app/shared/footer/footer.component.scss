@@ -1,12 +1,10 @@
 .footer-static {
   position: fixed;
   bottom: 0;
-  height: 70px;
+  height: 50px;
   background-color: #fff;
   border-top: 1px solid #f6f7fc;
-  padding: 3px;
-  -webkit-box-shadow: 1px 0 20px rgba(0, 0, 0, 0.1);
-  box-shadow: 1px 0 20px rgba(0, 0, 0, 0.1);
+  padding: 0px;
   width: 100%;
   z-index: 1001;
 }

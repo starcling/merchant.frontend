@@ -4,13 +4,13 @@
       <div class="logo"><img class="logo-size" src="assets/images/logo-light.svg" alt="" /></div>
     </a>
   </div>
-  <div class="row h-100">
-    <div class="img-holder">
+  <div class="row h-100 ">
+    <div class="img-holder flex-center">
       <div class="bg"></div>
       <div class="info-holder"><img src="assets/images/log-in.svg" alt="" /></div>
-    </div>
-    <div class="form-holder">
-      <div class="form-content" *ngIf="loginForm">
+    </div><!--
+    --><div class="form-holder">
+      <div class="form-content flex-center" *ngIf="loginForm">
         <div class="form-items">
           <h3>Welcome to PumaPay Merchant Portal!</h3>
           <form [formGroup]="loginForm" (ngSubmit)="login()">

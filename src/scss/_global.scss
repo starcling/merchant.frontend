@@ -2,9 +2,14 @@
   font-family: "SourceSansPro";
   src: url("assets/fonts/SourceSansPro-Regular.ttf");
 }
+@font-face {
+  font-family: "notoSansRegular";
+  src: url("assets/fonts/Noto_Sans/NotoSans-Regular.ttf");
+}
 
 body {
   background-color: #f4f6fb;
+  font-family: "notoSansRegular";
 }
 .color-white {
   color: white;
@@ -110,9 +115,9 @@ div.modal-body {
   h3 {
     color: #1c67f5;
     text-align: left;
-    font-size: 29px;
+    font-size: 32px;
     font-weight: 400;
-    margin-bottom: 80px;
+    margin-bottom: 40px;
     &.form-title {
       margin-bottom: 30px;
     }
@@ -136,7 +141,8 @@ div.modal-body {
     line-height: 20px;
     margin-top: 20px;
     fill: #333;
-    padding-left: 2px;
+    padding-left:0px;
+    margin-bottom: 6px;
   }
   .page-links {
     margin-bottom: 34px;
@@ -212,6 +218,7 @@ div.modal-body {
     border-radius: 1px;
   }
 }
+
 
 .form-content input[type="checkbox"],
 .form-content input[type="radio"] {
@@ -436,7 +443,7 @@ div.modal-body {
   text-align: center;
   box-shadow: 0px 1px rgba(0, 0, 0, 0.25);
   -webkit-box-shadow: 0px 1px rgba(0, 0, 0, 0.25);
-  border-radius: 2px;
+  border-radius: 4px;
   width: 106px;
   padding: 0 28px;
   background-color: #1e6af6;
@@ -497,4 +504,12 @@ div.modal-body {
   margin: 0 5px;
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
+}
+.footer-static, .footer-static span, .footer-static a{
+
+  font-family: "notoSansRegular" !important;
+}
+.footer-static a{
+  position: relative;
+  top:-3px;
 }

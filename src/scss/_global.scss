@@ -6,6 +6,14 @@
   font-family: "notoSansRegular";
   src: url("assets/fonts/Noto_Sans/NotoSans-Regular.ttf");
 }
+@font-face {
+  font-family: "notoSansBold";
+  src: url("assets/fonts/Noto_Sans/NotoSans-Bold.ttf");
+}
+
+h1,h2,h3,h4,h5{
+  font-family: "notoSansBold";
+}
 
 body {
   background-color: #f4f6fb;

@@ -9,18 +9,19 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { environment } from '@env/environment';
 import { CoreModule } from '@app/core';
 import { SharedModule } from '@app/shared';
-import { HomeModule } from './home/home.module';
+import { HomeModule } from '@app/home/home.module';
 
-import { ShellModule } from './shell/shell.module';
-import { AboutModule } from './about/about.module';
-import { LoginModule } from './login/login.module';
-import { AppComponent } from './app.component';
-import { AppRoutingModule } from './app-routing.module';
+import { ShellModule } from '@app/shell/shell.module';
+import { AboutModule } from '@app/about/about.module';
+import { LoginModule } from '@app/login/login.module';
+import { AppComponent } from '@app/app.component';
+import { AppRoutingModule } from '@app/app-routing.module';
 
 import { AuthenticationService } from '@app/services/authentication.service';
 import { AlertModalService } from '@app/services/alert-modal.service';
 import { ChangePasswordService } from '@app/services/change-password.service';
 import { DashboardModule } from '@app/dashboard/dashboard.module';
+import { BillingModule } from '@app/billing/billing.module';
 
 @NgModule({
   imports: [
@@ -35,6 +36,7 @@ import { DashboardModule } from '@app/dashboard/dashboard.module';
     ShellModule,
     HomeModule,
     DashboardModule,
+    BillingModule,
     AboutModule,
     LoginModule,
     AppRoutingModule // must be imported as the last module as it contains the fallback route

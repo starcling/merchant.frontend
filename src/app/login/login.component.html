@@ -7,44 +7,53 @@
   <div class="row h-100 ">
     <div class="img-holder flex-center">
       <div class="bg"></div>
-      <div class="info-holder"><img src="assets/images/log-in.svg" alt="" /></div>
+      <div class="info-holder"><img src="assets/images/log-in.png" alt="" /></div>
     </div><!--
     --><div class="form-holder">
       <div class="form-content flex-center" *ngIf="loginForm">
         <div class="form-items">
           <h3>Welcome to PumaPay Merchant Portal!</h3>
           <form [formGroup]="loginForm" (ngSubmit)="login()">
-            <label>Email Address</label>
-            <input
-              class="form-control"
-              type="email"
-              formControlName="email"
-              placeholder="Email"
-              autofocus
-              [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
-            />
-            <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
-              <div *ngIf="f.email.errors.required">Email is required</div>
-              <div *ngIf="f.email.errors.email">Email is not valid</div>
+            
+            
+            <div class="field-container">
+                <label>Email Address</label>
+                <input
+                  class="form-control"
+                  type="email"
+                  formControlName="email"
+                  placeholder="Email"
+                  autofocus
+                  [ngClass]="{ 'is-invalid': submitted && f.email.errors }"
+                />
+                <div *ngIf="submitted && f.email.errors" class="invalid-feedback">
+                  <div class="errorIcon"><img src="assets/images/warning-sign.png" width="18"/></div>
+                  <div *ngIf="f.email.errors.required">Email is required</div>
+                  <div *ngIf="f.email.errors.email">Email is not valid</div>
+                </div>
             </div>
-            <label>Password</label>
-            <input
-              class="form-control"
-              type="password"
-              formControlName="password"
-              placeholder="Password"
-              [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
-            />
-            <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
-              <div *ngIf="f.password.errors.required">Password is required</div>
-              <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+            
+            <div class="field-container">
+              <label>Password</label>
+              <input
+                class="form-control"
+                type="password"
+                formControlName="password"
+                placeholder="Password"
+                [ngClass]="{ 'is-invalid': submitted && f.password.errors }"
+              />
+              <div *ngIf="submitted && f.password.errors" class="invalid-feedback">
+                <div class="errorIcon"><img src="assets/images/warning-sign.png" width="18"/></div>
+                <div *ngIf="f.password.errors.required">Password is required</div>
+                <div *ngIf="f.password.errors.minlength">Password must be at least 6 characters</div>
+              </div>
             </div>
             <!--
               <div class="forgot-password-link text-right">
                   <a routerLink="/password-reset" class="color-white">Forgot Password</a>
               </div>
             -->
-            <div class="form-button float-right"><button id="submit" type="submit" class="ibtn">Continue</button></div>
+            <div class="form-button float-right"><button id="submit" type="submit" class="ibtn">Log In</button></div>
           </form>
         </div>
       </div>

@@ -2,8 +2,8 @@
   <div class="row step2container">
     <div class="col-xs-12 col-sm-8 col-md-8">
       <div class="form-group">
-        <label class="title">Product Name</label><br />
-        <label class="subTitle">Add a name to describe what your customers will subscribe to</label><br />
+        <label class="title">Product Name</label> <br />
+        <label class="subTitle">Add a name to describe what your customers will subscribe to</label> <br />
         <input
           type="text"
           class="productInput"
@@ -19,8 +19,8 @@
         <div class="notifyMsg" [hidden]="!productName.errors?.required">Product name is required!</div>
       </div>
       <div class="form-group">
-        <label class="title">Billing Model Name</label><br />
-        <label class="subTitle">Add a name that describes your pricing plan</label><br />
+        <label class="title">Billing Model Name</label> <br />
+        <label class="subTitle">Add a name that describes your pricing plan</label> <br />
         <input
           type="text"
           class="productInput"
@@ -31,12 +31,13 @@
           [ngClass]="{ 'is-invalid': f.submitted && f.billingModelName.errors }"
           required
           minlength="2"
-        /><br />
+        />
+        <br />
         <div class="notifyMsg" [hidden]="!billingModelName.errors?.required">Billing model name is required!</div>
       </div>
       <div class="form-group">
-        <label class="title">Billing Model Description</label><br />
-        <label class="subTitle">Explain briefly what this pricing plan offers.</label><br />
+        <label class="title">Billing Model Description</label> <br />
+        <label class="subTitle">Explain briefly what this pricing plan offers.</label> <br />
         <textarea
           class="inputDes"
           name="billModelDes"
@@ -59,7 +60,14 @@
     <div class="row">
       <div class="back"><button type="back" class="btn btn-default">Back</button></div>
       <div class="continue">
-        <button [disabled]="!f.form.valid" type="continue" class="btn btn-default" (click)="onsubmit()">
+        <button
+          [disabled]="!f.form.valid"
+          type="continue"
+          class="btn btn-default"
+          (click)="onsubmit()"
+          href=""
+          routerLink="/billing/step3"
+        >
           Continue
         </button>
       </div>

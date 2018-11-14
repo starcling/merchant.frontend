@@ -64,7 +64,7 @@ export class AuthenticationService {
           },
           true
         );
-        return response.success;
+        return response;
       })
     );
   }
@@ -82,7 +82,6 @@ export class AuthenticationService {
     let headers = new HttpHeaders();
     headers = headers.append('pma-user-token', this.getToken());
     headers = headers.append('Content-Type', 'application/json');
-
     return headers;
   }
 

@@ -1,110 +1,114 @@
-<div class="billingModelContainer">
-  <div class="bm-header">
-    Billing Models
-  </div>
-  <div class="bm-main flex-center-center">
-    <div class="noBilling">
-      <img src="assets/images/billing-img.png" class="billingImg" width="120" />
-      <button><img src="assets/images/plus.svg" /> BILLING MODEL</button>
+<div *ngIf="show1">
+  <div class="billingModelContainer">
+    <div class="bm-header">Billing Models</div>
+    <div class="bm-main flex-center-center">
+      <div class="noBilling">
+        <img src="assets/images/billing-img.png" class="billingImg" width="120" />
+        <button href="" routerLink="/billing/step1"><img src="assets/images/plus.svg" /> BILLING MODEL</button>
+      </div>
     </div>
-    
   </div>
 </div>
 
-<div class="billingModelContainer">
+<div *ngIf="show2">
+  <div class="billingModelContainer">
     <div class="bm-header">
       <div class="row">
-        <div class="col">
-            Billing Models
-        </div>
+        <div class="col">Billing Models</div>
         <div class="col text-right">
-          <button><img src="assets/images/plus.svg"> NEW</button>
+          <button href="" routerLink="/billing/step1"><img src="assets/images/plus.svg" /> NEW</button>
         </div>
       </div>
-      
     </div>
     <div class="bm-main flex-center-center">
-      
       <div class="billingBoxCont">
         <div class="row">
           <div class="col-xs-12 col-sm-4 col-md-3">
-              <div class="billingBox">
-                <div class="boxHead">
-                  <div class="ImgCont"><img src="assets/images/refresh.svg" width="12"/></div>
-                  RECURRING
+            <div class="billingBox active">
+              <div class="boxHead">
+                <div class="ImgCont"><img src="assets/images/refresh.svg" width="12" /></div>
+                SINGLE
+              </div>
+              <div class="boxCont">
+                <div class="pad-l-20">
+                  <p>
+                    Product <br />
+                    <span>1 Day</span>
+                  </p>
+                  <a href="">1 day</a>
                 </div>
-                <div class="boxCont">
-                  <div class="pad-l-20">
-                    <p>Product <br/><span>Platinum</span></p>
-                    <a href="">1 year</a>
-                  </div>
 
-                  <div class="large">
-                    <div>
-                      <div class="ImgCont"><img src="assets/images/refresh-b.svg" width="18"/></div>
-                      $99.99
-                    </div>  
-                  </div>
-                  <div class="footerText">
-                    <p>PMA 309,028.18</p>
-                    <span>Subscribers 3.5K</span>
+                <div class="large">
+                  <div>
+                    <div class="ImgCont"><img src="assets/images/refresh-b.svg" width="18" /></div>
+                    $4.99
                   </div>
                 </div>
+                <div class="footerText">
+                  <p>PMA 309,028.18</p>
+                  <span>Subscribers 2.1K</span>
+                </div>
               </div>
+            </div>
           </div>
           <div class="col-xs-12 col-sm-4 col-md-3">
-              <div class="billingBox">
-                  <div class="boxHead">
-                      <div class="ImgCont"><img src="assets/images/refresh.svg" width="12"/></div>
-                      SINGLE RECURRING
-                    </div>
-                    <div class="boxCont">
-                      <div class="pad-l-20">
-                        <p>Product <br/><span>Billing Model</span></p>
-                        <a href="">6 months</a>
-                      </div>
-    
-                      <div class="large">
-                        <div>
-                          <div class="ImgCont"><img src="assets/images/refresh-b.svg" width="18"/></div>
-                          $69.99
-                        </div>  
-                      </div>
-                      <div class="footerText">
-                        <p>115,011.88 PMA</p>
-                        <span>Subscribers 217</span>
-                      </div>
-                    </div>
+            <div class="billingBox">
+              <div class="boxHead">
+                <div class="ImgCont"><img src="assets/images/refresh.svg" width="12" /></div>
+                RECURRING
               </div>
+              <div class="boxCont">
+                <div class="pad-l-20">
+                  <p>
+                    Product <br />
+                    <span>Platinum</span>
+                  </p>
+                  <a href="">1 year</a>
+                </div>
+
+                <div class="large">
+                  <div>
+                    <div class="ImgCont"><img src="assets/images/refresh-b.svg" width="18" /></div>
+                    $99.99
+                  </div>
+                </div>
+                <div class="footerText">
+                  <p>PMA 309,028.18</p>
+                  <span>Subscribers 3.5K</span>
+                </div>
+              </div>
+            </div>
           </div>
           <div class="col-xs-12 col-sm-4 col-md-3">
-              <div class="billingBox active">
-                  <div class="boxHead">
-                      <div class="ImgCont"><img src="assets/images/refresh.svg" width="12"/></div>
-                      SINGLE
-                    </div>
-                    <div class="boxCont">
-                      <div class="pad-l-20">
-                        <p>Product <br/><span>1 Day</span></p>
-                        <a href="">1 day</a>
-                      </div>
-    
-                      <div class="large">
-                        <div>
-                          <div class="ImgCont"><img src="assets/images/refresh-b.svg" width="18"/></div>
-                          $4.99
-                        </div>  
-                      </div>
-                      <div class="footerText">
-                        <p>PMA 309,028.18</p>
-                        <span>Subscribers 2.1K</span>
-                      </div>
-                    </div>
+            <div class="billingBox">
+              <div class="boxHead">
+                <div class="ImgCont"><img src="assets/images/refresh.svg" width="12" /></div>
+                SINGLE RECURRING
               </div>
+              <div class="boxCont">
+                <div class="pad-l-20">
+                  <p>
+                    Product <br />
+                    <span>Billing Model</span>
+                  </p>
+                  <a href="">6 months</a>
+                </div>
+
+                <div class="large">
+                  <div>
+                    <div class="ImgCont"><img src="assets/images/refresh-b.svg" width="18" /></div>
+                    $69.99
+                  </div>
+                </div>
+                <div class="footerText">
+                  <p>115,011.88 PMA</p>
+                  <span>Subscribers 217</span>
+                </div>
+              </div>
+            </div>
           </div>
-         
         </div>
-        
       </div>
     </div>
   </div>
+</div>

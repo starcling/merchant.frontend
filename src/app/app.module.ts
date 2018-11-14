@@ -23,6 +23,7 @@ import { ChangePasswordService } from '@app/services/change-password.service';
 import { DashboardModule } from '@app/dashboard/dashboard.module';
 import { BillingModule } from '@app/billing/billing.module';
 import { BillingStep2Component } from './billing/billing-step2/billing-step2.component';
+import { BillingStep1Component } from './billing/billing-step1/billing-step1.component';
 
 @NgModule({
   imports: [
@@ -42,7 +43,7 @@ import { BillingStep2Component } from './billing/billing-step2/billing-step2.com
     LoginModule,
     AppRoutingModule // must be imported as the last module as it contains the fallback route
   ],
-  declarations: [AppComponent, BillingStep2Component],
+  declarations: [AppComponent, BillingStep2Component, BillingStep1Component],
   providers: [AuthenticationService, AlertModalService, ChangePasswordService],
   bootstrap: [AppComponent]
 })

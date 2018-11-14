@@ -1,0 +1,86 @@
+.billingModelContainer {
+  width: 100%;
+  margin-bottom: 20px;
+  .bm-header {
+    background-color: #fcfdff;
+    height: 50px;
+    margin-bottom: 2px;
+    padding: 14px 30px;
+    font-size: 18px;
+    font-family: "Noto Sans";
+    .text-right {
+      text-align: right;
+    }
+  }
+  .bm-main {
+    background-color: #ffffff;
+    padding: 50px 30px;
+    min-height: 120px;
+    .billingBoxCont {
+      .billingBox {
+        border-radius: 6px 6px 6px 6px;
+        background-color: #f4f6fb;
+        height: 200px;
+        .boxHead {
+          padding: 6px 15px;
+          img {
+            float: right;
+          }
+          p {
+            font-size: 15px;
+            font-family: "Lato";
+            line-height: 18px;
+            font-style: "bold";
+            color: #000000;
+            margin-top: 5px;
+            float: left;
+          }
+          input[type="radio"] {
+            background-color: #f4f6fb !important;
+            margin: 14px 20px;
+            border: 2px solid white;
+          }
+        }
+        .boxCont {
+          padding: 10px 15px;
+          background-color: #f4f6fb;
+          p {
+            font-family: "Noto Sans";
+            font-size: 16px;
+            line-height: 21px;
+            font-style: normal;
+            color: #556486;
+          }
+          .fontstyle {
+            font-style: italic !important;
+          }
+        }
+      }
+      width: 100%;
+      padding: 25px 10px;
+    }
+  }
+
+  .bs-footer {
+    background-color: #ffffff;
+    padding: 50px 30px;
+    button {
+      display: block;
+      background-color: #1c67f5;
+      color: #ffffff;
+      width: 180px;
+      height: 38px;
+      border-radius: 3px;
+      margin-bottom: 30px;
+      border: none;
+      box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+      float: right;
+    }
+  }
+}
+
+.flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

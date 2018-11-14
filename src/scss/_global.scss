@@ -11,7 +11,11 @@
   src: url("assets/fonts/Noto_Sans/NotoSans-Bold.ttf");
 }
 
-h1,h2,h3,h4,h5{
+h1,
+h2,
+h3,
+h4,
+h5 {
   font-family: "notoSansBold";
 }
 
@@ -149,7 +153,7 @@ div.modal-body {
     line-height: 20px;
     margin-top: 20px;
     fill: #333;
-    padding-left:0px;
+    padding-left: 0px;
     margin-bottom: 6px;
   }
   .page-links {
@@ -226,7 +230,6 @@ div.modal-body {
     border-radius: 1px;
   }
 }
-
 
 .form-content input[type="checkbox"],
 .form-content input[type="radio"] {
@@ -513,11 +516,12 @@ div.modal-body {
   -webkit-transition: all 0.3s ease;
   transition: all 0.3s ease;
 }
-.footer-static, .footer-static span, .footer-static a{
-
+.footer-static,
+.footer-static span,
+.footer-static a {
   font-family: "notoSansRegular" !important;
 }
-.footer-static a{
+.footer-static a {
   position: relative;
-  top:-3px;
+  top: -3px;
 }

@@ -3,11 +3,10 @@ import { Routes, RouterModule } from '@angular/router';
 import { DashboardComponent } from '@app/dashboard/dashboard.component';
 import { Shell } from '@app/shell/shell.service';
 
-
 const routes: Routes = [
   Shell.childRoutes([
     { path: '', redirectTo: '/dashboard', pathMatch: 'full' },
-    { path: 'dashboard', component: DashboardComponent}
+    { path: 'dashboard', component: DashboardComponent }
   ])
 ];
 
@@ -15,4 +14,4 @@ const routes: Routes = [
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]
 })
-export class DashboardRoutingModule { }
+export class DashboardRoutingModule {}

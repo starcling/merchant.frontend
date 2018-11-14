@@ -1,0 +1,66 @@
+.step2container {
+  background-color: #ffffff;
+}
+.title {
+  font-size: 14px;
+  padding-left: 20px;
+  padding-top: 20px;
+  line-height: 0.5px;
+}
+.subTitle {
+  font-size: 12px;
+  padding-left: 20px;
+}
+.input {
+  width: 550px;
+  height: 40px;
+  padding-left: 20px;
+  margin-left: 20px;
+  margin-bottom: 10px;
+  box-shadow: 4px #000000;
+  font-size: 14px;
+}
+.inputDes {
+  width: 550px;
+  height: 100px;
+  padding-top: 5px;
+  padding-left: 20px;
+  margin-left: 20px;
+  margin-bottom: 20px;
+  box-shadow: 4px #000000;
+  font-size: 14px;
+}
+.mobile {
+  height: 420px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.char-msg {
+  font-size: 12px;
+  margin-left: 480px;
+}
+
+.ng-valid[required],
+.ng-valid.required {
+  border-left: 5px solid #42a948; /* green */
+}
+.ng-invalid:not(form) {
+  border-left: 5px solid #a94442; /* red */
+}
+.back {
+  margin-left: 50px;
+  margin-right: 700px;
+  margin-bottom: 20px;
+  background-color: #ffffff;
+}
+button {
+  display: inline-block;
+  background-color: #1c67f5;
+  color: #ffffff;
+  width: px;
+  height: 32px;
+  border-radius: 3px;
+  border: none;
+  margin-top: -5px;
+  box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+}

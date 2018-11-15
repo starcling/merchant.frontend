@@ -52,10 +52,15 @@
           maxlength="140"
         ></textarea
         ><br />
-        <div class="notifyMsg" [hidden]="!billModelDes.errors?.required">
-          Billing model description must be atleast 2 characters!
+
+        <div class="col-md-12">
+          <div class="col-md-8">
+            <div class="notifyMsg" [hidden]="!billModelDes.errors?.required">
+              Billing model description must be atleast 2 characters!
+            </div>
+          </div>
+          <div class="col-md-4"><label class="char-msg">140 characters</label></div>
         </div>
-        <label class="char-msg">140 characters</label>
       </div>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-4">

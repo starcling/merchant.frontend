@@ -1,0 +1,86 @@
+.billingModelContainer {
+  width: 100%;
+  margin-bottom: 20px;
+  .bm-header {
+    background-color: #fcfdff;
+    height: 50px;
+    margin-bottom: 2px;
+    padding: 14px 30px;
+    font-size: 18px;
+    font-style: "bold";
+    .text-right {
+      text-align: right;
+    }
+  }
+  .bm-main {
+    background-color: #ffffff;
+    padding: 50px 30px;
+    min-height: 120px;
+
+    .billingBoxCont {
+      width: 100%;
+      label {
+        font-style: 11px;
+        color: #333333;
+      }
+      select {
+        width: 130px;
+        height: 38px;
+        border-color: #ccd1d9 solid;
+        background-color: #fcfdff;
+        font-size: 14px;
+        line-height: 21px;
+        border-radius: 3px;
+        padding: 0px 20px;
+      }
+      input {
+        width: 300px;
+        height: 38px;
+        border-radius: 1px;
+        padding: 0px 20px;
+        font-size: 14px;
+        line-height: 21px;
+        ::placeholder {
+          color: #bdbdbd;
+        }
+      }
+      .amountinput {
+        margin: 0px 10px;
+      }
+      .singleimg {
+        width: 222px;
+        height: 442px;
+      }
+      .backbtn {
+        display: block;
+        background-color: #ffffff;
+        color: #1c67f5;
+        width: 180px;
+        height: 38px;
+        border-radius: 3px;
+        border-color: #1c67f5;
+        margin-top: 25px;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+        float: left;
+      }
+      .continuebtn {
+        display: block;
+        background-color: #1c67f5;
+        color: #ffffff;
+        width: 180px;
+        height: 38px;
+        border-radius: 3px;
+        border: none;
+        margin-top: 25px;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+        float: right;
+      }
+    }
+  }
+}
+
+.flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

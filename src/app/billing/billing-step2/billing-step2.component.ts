@@ -10,7 +10,4 @@ export class BillingStep2Component implements OnInit {
   constructor() {}
 
   ngOnInit() {}
-  onSubmit() {
-    console.log('Function submitted..');
-  }
 }

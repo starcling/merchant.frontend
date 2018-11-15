@@ -14,7 +14,12 @@ const log = new Logger('Login');
 export class DashboardComponent implements OnInit {
   isLoading = false;
   error: string;
-  pullPaymentAmount;
+  treasuryBalance;
+  treasuryCurrency;
+  pullPaymentsBalance;
+  pullPaymentsCurrency;
+  gasBalance;
+  gasCurrency;
 
   constructor(private dashboardService: DashboardService) {}
 
@@ -26,7 +31,12 @@ export class DashboardComponent implements OnInit {
 
     this.dashboardService.getPullPayment().subscribe(result => {
       console.log('response of pullPayment', result);
-      this.pullPaymentAmount = result.data.amount;
+      this.treasuryBalance = result.data.treasury.balance;
+      this.treasuryCurrency = result.data.treasury.currency;
+      this.pullPaymentsBalance = result.data.pullPayments.balance;
+      this.pullPaymentsCurrency = result.data.pullPayment.currency;
+      this.gasBalance = result.data.gas.balance;
+      this.gasCurrency = result.data.gas.currency;
     });
   }
 }

@@ -13,13 +13,15 @@ import { HttpPostRequest } from '@app/utils/web/HttpPostRequest';
 })
 export class DashboardService {
   private actionUrl: string;
+
   private headers: HttpHeaders = new HttpHeaders({
     'Content-Type': 'application/json',
-    'api-request-source': 'portal'
+    'api-request-source': 'portal',
+    Authorization: localStorage.getItem('token')
   });
 
   constructor(private http: HttpClient) {
-    this.actionUrl = `${Constants.apiHost}${Constants.apiPrefix}pull-payment-models/`;
+    this.actionUrl = `${Constants.apiHost}${Constants.apiPrefix}'balance/all/`;
   }
   public getPullPayment(): Observable<any> {
     console.log('url', this.actionUrl);

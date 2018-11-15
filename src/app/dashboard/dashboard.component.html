@@ -4,8 +4,8 @@
       <label>TREASURY</label>
       <div class="pma-box active">
         <div>
-          <h3>PMA</h3>
-          <p>8,394,788.77</p>
+          <h3>{{ treasuryCurrency ? treasuryCurrency : 'PMA' }}</h3>
+          <p>{{ treasuryBalance ? treasuryBalance : '0.0' }}</p>
         </div>
       </div>
     </div>
@@ -13,8 +13,8 @@
       <label>PULLPAYMENTS</label>
       <div class="pma-box">
         <div>
-          <h3>PMA</h3>
-          <p>{{ pullPaymentAmount ? pullPaymentAmount : '0.0' }}</p>
+          <h3>{{ pullPaymentsCurrency ? pullPaymentsCurrency : 'PMA' }}</h3>
+          <p>{{ pullPaymentsBalance ? pullPaymentsBalance : '0.0' }}</p>
         </div>
       </div>
     </div>
@@ -22,8 +22,8 @@
       <label>GAS WALLET</label>
       <div class="pma-box active">
         <div>
-          <h3>ETH</h3>
-          <p>54,892.31</p>
+          <h3>{{ gasCurrency ? gasCurrency : 'ETH' }}</h3>
+          <p>{{ gasBalance ? gasBalance : '0.0' }}</p>
         </div>
       </div>
     </div>
@@ -38,7 +38,6 @@
       </div>
     </div>
   </div>
-
   <div class="transaction-table">
     <div class="row">
       <div class="col"><label>TRANSACTION HISTORY</label></div>

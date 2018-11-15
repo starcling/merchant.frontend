@@ -84,3 +84,8 @@
   align-items: center;
   justify-content: center;
 }
+
+div.is-invalid {
+  border-color: #eb3232 !important;
+  box-shadow: none;
+}

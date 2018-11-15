@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-billing-step3',
@@ -6,7 +7,38 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./billing-step3.component.scss']
 })
 export class BillingStep3Component implements OnInit {
-  constructor() {}
+  model: any = {};
+  private selectOption: any;
+  constructor(private router: Router) {
+    this.selectOption = [
+      {
+        id: 1,
+        label: 'USD',
+        value: 0
+      },
+      {
+        id: 2,
+        label: 'EUR',
+        value: 1
+      },
+      {
+        id: 3,
+        label: 'GBP',
+        value: 2
+      },
+      {
+        id: 4,
+        label: 'JPY',
+        value: 4
+      }
+    ];
+  }
 
   ngOnInit() {}
+  onSubmit() {
+    if (this.model) {
+      this.router.navigate(['/billing/step4']);
+    }
+    return this.model;
+  }
 }

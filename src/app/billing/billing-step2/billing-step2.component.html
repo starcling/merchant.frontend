@@ -1,28 +1,39 @@
-<form #bookForm="ngForm">
+<form name="form" #f="ngForm">
   <div class="row step2container">
     <div class="col-xs-12 col-sm-8 col-md-8">
       <div class="form-group">
         <label class="title">Product Name</label><br />
         <label class="subTitle">Add a name to describe what your customers will subscribe to</label><br />
         <input
-          class="input"
-          id="product"
+          type="text"
+          class="productInput"
+          name="productName"
           placeholder="Enter your product name"
+          [(ngModel)]="model.productName"
+          #productName="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && f.productName.errors }"
           required
           minlength="2"
-          [(ngModel)]="model.product"
-          name="product"
-          #product="ngModel"
         />
         <br />
-        <div *ngIf="product.errors && (product.dirty || product.touched)" class="alert alert-danger">
-          <div [hidden]="!product.errors.required">Product name is required!</div>
-          <div [hidden]="!product.errors.minlength">Product name must be at least 2 characters long!</div>
-        </div>
+        <div class="notifyMsg" [hidden]="!productName.errors?.required">Product name is required!</div>
       </div>
-      <label class="title">Billing Model Name</label><br />
-      <label class="subTitle">Add a name that describes your pricing plan</label><br />
-      <input class="input" placeholder="Choose a Billing Model Name" required minlength="2" /><br />
+      <div class="form-group">
+        <label class="title">Billing Model Name</label><br />
+        <label class="subTitle">Add a name that describes your pricing plan</label><br />
+        <input
+          type="text"
+          class="productInput"
+          name="billingModelName"
+          placeholder="Choose a Billing Model Name"
+          [(ngModel)]="model.billingModelName"
+          #billingModelName="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && f.billingModelName.errors }"
+          required
+          minlength="2"
+        /><br />
+        <div class="notifyMsg" [hidden]="!billingModelName.errors?.required">Billing model name is required!</div>
+      </div>
       <label class="title">Billing Model Description</label><br />
       <label class="subTitle">Explain briefly what this pricing plan offers.</label><br />
       <textarea
@@ -40,7 +51,11 @@
     </div>
     <div class="row">
       <div class="back"><button type="back" class="btn btn-default">Back</button></div>
-      <div class="continue"><button type="continue" class="btn btn-default">Continue</button></div>
+      <div class="continue">
+        <button [disabled]="!f.form.valid" type="continue" class="btn btn-default" (click)="onsubmit()">
+          Continue
+        </button>
+      </div>
     </div>
   </div>
 </form>

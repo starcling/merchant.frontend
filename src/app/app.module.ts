@@ -26,6 +26,7 @@ import { BillingStep2Component } from './billing/billing-step2/billing-step2.com
 import { BillingStep1Component } from './billing/billing-step1/billing-step1.component';
 import { BillingStep3Component } from './billing/billing-step3/billing-step3.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { BillingRecurringStep3Component } from './billing/billing-step3/billing-recurring-step3/billing-recurring-step3.component';
 
 @NgModule({
   imports: [
@@ -45,7 +46,13 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
     LoginModule,
     AppRoutingModule // must be imported as the last module as it contains the fallback route
   ],
-  declarations: [AppComponent, BillingStep2Component, BillingStep1Component, BillingStep3Component],
+  declarations: [
+    AppComponent,
+    BillingStep2Component,
+    BillingStep1Component,
+    BillingStep3Component,
+    BillingRecurringStep3Component
+  ],
   providers: [
     AuthenticationService,
     AlertModalService,

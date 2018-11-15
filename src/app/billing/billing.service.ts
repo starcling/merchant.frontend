@@ -19,12 +19,12 @@ export class BillingService {
     'api-request-source': 'portal'
   });
   constructor(private _http: HttpClient) {
-    this.userID = localStorage.getItem('id');
+    //this.userID = localStorage.getItem('merchantID');
     this.actionUrl = `${Constants.apiPrefix}pull-payment-models/`;
-    localStorage.removeItem('id');
+    //localStorage.removeItem('merchantID');
   }
 
   public Getpull(): Observable<any> {
-    return this._http.get(this.actionUrl + this.userID, { headers: this.headers });
+    return this._http.get(this.actionUrl, { headers: this.headers });
   }
 }

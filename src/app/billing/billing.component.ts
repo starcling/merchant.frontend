@@ -13,6 +13,7 @@ import { BillingService } from '@app/billing/billing.service';
   styleUrls: ['./billing.component.scss']
 })
 export class BillingComponent implements OnInit {
+  public sample = [];
   version: string = environment.version;
   error: string;
   loginForm: FormGroup;
@@ -42,6 +43,7 @@ export class BillingComponent implements OnInit {
           console.log('success', result);
           this.show1 = false;
           this.show2 = true;
+          this.sample = result.data;
           // this.route.queryParams.subscribe(params =>
           //   this.router.navigate([params.redirect || '/billing/step2'], { replaceUrl: true })
           // );
@@ -49,15 +51,15 @@ export class BillingComponent implements OnInit {
           this.show1 = true;
           this.show2 = false;
         }
-      },
-      error => {
-        console.log('errorsuccesserror', error);
-        if (error && error.error['message']) {
-          this.error = error.error['message'];
-        } else {
-          console.log(error);
-        }
       }
+      // error => {
+      //   console.log('errorsuccesserror1', error);
+      //   if (error && error.error['message']) {
+      //     this.error = error.error['message'];
+      //   } else {
+      //     console.log("errorsuccesserror2", error);
+      //   }
+      // }
     );
   }
 }

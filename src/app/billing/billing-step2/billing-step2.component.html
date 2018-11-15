@@ -34,17 +34,24 @@
         /><br />
         <div class="notifyMsg" [hidden]="!billingModelName.errors?.required">Billing model name is required!</div>
       </div>
-      <label class="title">Billing Model Description</label><br />
-      <label class="subTitle">Explain briefly what this pricing plan offers.</label><br />
-      <textarea
-        class="inputDes"
-        placeholder="What does your billing model?"
-        required
-        minlength="2"
-        maxlength="140"
-      ></textarea
-      ><br />
-      <label class="char-msg">140 characters</label>
+      <div class="form-group">
+        <label class="title">Billing Model Description</label><br />
+        <label class="subTitle">Explain briefly what this pricing plan offers.</label><br />
+        <textarea
+          class="inputDes"
+          name="billModelDes"
+          placeholder="What does your billing model?"
+          [(ngModel)]="model.billModelDes"
+          #billModelDes="ngModel"
+          [ngClass]="{ 'is-invalid': f.submitted && f.billModelDes.errors }"
+          required
+          minlength="2"
+          maxlength="140"
+        ></textarea
+        ><br />
+        <div class="notifyMsg" [hidden]="!billModelDes.errors?.required">Product name is required!</div>
+        <label class="char-msg">140 characters</label>
+      </div>
     </div>
     <div class="col-xs-12 col-sm-4 col-md-4">
       <div><img src="../../../assets/images/mobile.png" class="mobile" /></div>

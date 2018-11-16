@@ -1,0 +1,80 @@
+<div class="billingModelContainer">
+  <div class="bmr-header"><b>Recurring Billing Model</b></div>
+  <div class="bmr-main flex-center-center">
+    <div class="mainContent">
+      <label class="billingBoxCont">GAS FUNDING FOR EACH SUBCRIBED CUSTOMER</label>
+      <div class="row"><label class="subheading">Frequency</label></div>
+      <div class="col-xs-12 col-sm-8 col-md-8">
+        <select name="transactions">
+          <option value="On every transaction">At the end of contract</option>
+          <option value="On every transaction">On every transaction</option>
+        </select>
+      </div>
+      <div class="TableData">
+        <div class="row">
+          <div class="Columndata col-md-3">Purpose</div>
+          <div class="Columndata col-md-3">Number of recurrences</div>
+          <div class="Columndata col-md-3">Estimated Gas Cost/transaction(ETH)</div>
+          <div class="Columndata col-md-3">Total Estimated Gas cost (ETH)</div>
+        </div>
+        <div class="row">
+          <div class="Columndata col-md-3">Recurring Pull Transaction</div>
+          <div class="Columndata col-md-3">10</div>
+          <div class="Columndata col-md-3">0.00031</div>
+          <div class="Columndata col-md-3">0.00031</div>
+          <!-- <div class="bgSet2 col-md-3">0.00031</div> -->
+        </div>
+        <div class="row">
+          <div class="Columndata col-md-3">Transfers from PullPayment Account to Treasury</div>
+          <div class="Columndata col-md-3">1</div>
+          <div class="Columndata col-md-3">0.00031</div>
+          <div class="Columndata col-md-3">0.00031</div>
+        </div>
+        <div class="row">
+          <div class="Columndata col-md-3">Total</div>
+          <div class="Columndata col-md-3"></div>
+          <div class="Columndata col-md-3"></div>
+          <div class="Columndata2 col-md-3">0.00620</div>
+        </div>
+      </div>
+      <!--
+        <div>
+        </div>
+      -->
+      <!--
+        <div class="table">
+        <table>
+          <tr>
+            <th>Purpose</th>
+            <th>Number of recurrences</th>
+            <th>Estimated Gas Cost/transaction(ETH)</th>
+            <th>Total Esatimated Gas Cost (ETH)</th>
+          </tr>
+        </table>
+      -->
+      <div class="txtContent">
+        <img src="assets/images/info.png" class="info" />
+        <label class="titleFun">Funding the PullPayment Accounts with Gas</label>
+        <label class="titleContent">
+          Every time a new customer subscribes to a billing model, the system creates a new PullPayment account. The
+          PullPayment account will continuously bill the customer according to the billing model’s parameters. The PMA
+          tokens will be kept in the PullPayment account until they are transferred to the Treasury.
+        </label>
+        <label class="titleContent"
+          >Choose how often you want to transfer funds from all the PullPayment accounts associated with this billing
+          model to your Treasury. Depending on your choice, the specific amount of ETH is allocated for those recurring
+          payments to pay for the gas fees of the transfer to the Treasury.
+        </label>
+        <label class="tContent"> Learn more </label>
+      </div>
+      <!--
+        <div class="col-xs-12 col-sm-12 col-md-12">
+          <button class="backbtn">Back</button> <button class="continuebtn">Publish</button>
+        </div>
+      -->
+      <div class="col-xs-12 col-sm-12 col-md-12">
+        <button class="backbtn">Back</button> <button class="continuebtn">Publish</button>
+      </div>
+    </div>
+  </div>
+</div>

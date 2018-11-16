@@ -6,11 +6,15 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { I18nService } from '@app/core';
 import { finalize } from 'rxjs/operators';
 import { BillingService } from '@app/billing/billing.service';
+import { currencyPipe } from '@app/billing/currency.pipe';
+import { CurrencyPipe } from '@angular/common';
+import { NgbActiveModal } from '@ng-bootstrap/ng-bootstrap';
 
 @Component({
   selector: 'app-billing',
   templateUrl: './billing.component.html',
-  styleUrls: ['./billing.component.scss']
+  styleUrls: ['./billing.component.scss'],
+  providers: [CurrencyPipe]
 })
 export class BillingComponent implements OnInit {
   public sample = [];
@@ -28,7 +32,8 @@ export class BillingComponent implements OnInit {
     private i18nService: I18nService,
     // private authenticationService: AuthenticationService,
     private billingService: BillingService
-  ) {
+  ) // public modal: NgbActiveModal
+  {
     //this.createForm();
   }
 
@@ -36,6 +41,7 @@ export class BillingComponent implements OnInit {
     this.show1 = true;
     this.Getpull();
   }
+
   Getpull() {
     this.billingService.Getpull().subscribe(
       result => {

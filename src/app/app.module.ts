@@ -27,6 +27,8 @@ import { BillingStep1Component } from './billing/billing-step1/billing-step1.com
 import { BillingStep3Component } from './billing/billing-step3/billing-step3.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { BillingRecurringStep3Component } from './billing/billing-step3/billing-recurring-step3/billing-recurring-step3.component';
+import { currencyPipe } from '@app/currency.pipe';
+import { MainPipe } from '@app/main-pipe.module';
 
 @NgModule({
   imports: [
@@ -44,6 +46,7 @@ import { BillingRecurringStep3Component } from './billing/billing-step3/billing-
     BillingModule,
     AboutModule,
     LoginModule,
+    MainPipe,
     AppRoutingModule // must be imported as the last module as it contains the fallback route
   ],
   declarations: [

@@ -22,12 +22,16 @@
     </div>
     <div class="bm-main flex-center-center">
       <div class="billingBoxCont">
-        <div *ngFor="let array of sample" class="col-xs-12 col-sm-4 col-md-4 single-class">
+        <div *ngFor="let array of sample" class="col-xs-12 col-sm-3 col-md-4 single-class">
           <div class="billingBox active">
             <div class="boxHead">
-              <div class="ImgCont"><img src="assets/images/refresh.svg" width="12" /></div>
+              <div class="ImgCont"><img src="assets/images/refresh.svg" width="15" /></div>
               SINGLE
+              <!-- <div class="noBilling"> -->
+              <img src="assets/images/3Dotted.png" class="billingImg1" width="10" />
+              <!-- </div> -->
             </div>
+
             <div class="boxCont">
               <div class="pad-l-20">
                 <p>
@@ -36,11 +40,11 @@
                 </p>
                 <a href="">1 day</a>
               </div>
-
               <div class="large">
                 <div>
                   <div class="ImgCont"><img src="assets/images/refresh-b.svg" width="18" /></div>
-                  ${{ array.amount }}
+
+                  {{ array.currency | CustomeCurrency }}{{ array.amount }}
                 </div>
               </div>
               <div class="footerText">

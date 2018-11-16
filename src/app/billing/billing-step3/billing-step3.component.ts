@@ -8,7 +8,7 @@ import { Router } from '@angular/router';
 })
 export class BillingStep3Component implements OnInit {
   model: any = {};
-  private selectOption: any;
+  public selectOption: any;
   constructor(private router: Router) {
     this.selectOption = [
       {
@@ -35,9 +35,9 @@ export class BillingStep3Component implements OnInit {
   }
 
   ngOnInit() {}
-  onSubmit() {
-    if (this.model) {
-      this.router.navigate(['/billing/step4']);
+  onSubmit(data) {
+    if (data.value) {
+      this.router.navigate(['/billing/step4'], { queryParams: { billingAmount: this.model } });
     }
     return this.model;
   }

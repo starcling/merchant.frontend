@@ -29,6 +29,7 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { BillingRecurringStep3Component } from './billing/billing-step3/billing-recurring-step3/billing-recurring-step3.component';
 import { currencyPipe } from '@app/currency.pipe';
 import { MainPipe } from '@app/main-pipe.module';
+import { NgxQRCodeModule } from 'ngx-qrcode2';
 
 @NgModule({
   imports: [
@@ -47,6 +48,7 @@ import { MainPipe } from '@app/main-pipe.module';
     AboutModule,
     LoginModule,
     MainPipe,
+    NgxQRCodeModule,
     AppRoutingModule // must be imported as the last module as it contains the fallback route
   ],
   declarations: [

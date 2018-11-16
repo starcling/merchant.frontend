@@ -4,6 +4,7 @@ import { DashboardService } from './dashboard.service';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { finalize } from 'rxjs/operators';
 import { Logger } from '@app/core';
+import { ValueConverter } from '@angular/compiler/src/render3/view/template';
 
 const log = new Logger('Login');
 @Component({
@@ -20,6 +21,7 @@ export class DashboardComponent implements OnInit {
   pullPaymentsCurrency;
   gasBalance;
   gasCurrency;
+  value: string = '0x3ef78A06d3FBA9E9508df0F4f0865Ca9261F992F';
 
   constructor(private dashboardService: DashboardService) {}
 
@@ -38,5 +40,18 @@ export class DashboardComponent implements OnInit {
       this.gasBalance = result.data.gas.balance;
       this.gasCurrency = result.data.gas.currency;
     });
+  }
+  getTreasureAddress() {
+    this.dashboardService.getTreasuryAddress().subscribe(result => {
+      this.value = result.data.address;
+    });
+  }
+  copyInputMessage(inputElement) {
+    inputElement.select();
+    document.execCommand('copy');
+    inputElement.setSelectionRange(0, 0);
+  }
+  transactionHistory() {
+    this.dashboardService.getTransactionHistory().subscribe(result => {});
   }
 }

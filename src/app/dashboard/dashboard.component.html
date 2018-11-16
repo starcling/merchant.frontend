@@ -31,10 +31,14 @@
   <div class="qrCodeContainer">
     <label>EXTERNAL WALLET FUNDING</label>
     <div class="qrCont">
-      <img src="assets/images/qr-code.png" />
+      <!-- <img src="assets/images/qr-code.png" /> -->
+      <ngx-qrcode [(qrc-value)]="value"> </ngx-qrcode>
       <div class="qrContents">
         <p>Scan the QR Code to send funds to your Wallet and <br />refill your Transfer Gas tank</p>
-        <div class="qrCodeField"><input type="text" /> <img src="assets/images/copy.png" /></div>
+        <div class="qrCodeField">
+          <input type="text" value="{{value}}" #userinput />
+          <img src="assets/images/copy.png" (click)="copyInputMessage(userinput)" value="click to copy" />
+        </div>
       </div>
     </div>
   </div>

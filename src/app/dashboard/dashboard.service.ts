@@ -13,6 +13,8 @@ import { HttpPostRequest } from '@app/utils/web/HttpPostRequest';
 })
 export class DashboardService {
   private actionUrl: string;
+  private treasuryAddressUrl;
+  private transactionHistoryUrl;
 
   private headers: HttpHeaders = new HttpHeaders({
     'Content-Type': 'application/json',
@@ -21,10 +23,20 @@ export class DashboardService {
   });
 
   constructor(private http: HttpClient) {
-    this.actionUrl = `${Constants.apiHost}${Constants.apiPrefix}'balance/all/`;
+    this.actionUrl = `${Constants.apiHost}${Constants.apiPrefix}balance/all/`;
+    this.treasuryAddressUrl = `${Constants.apiHost}${Constants.apiPrefix}address/treasury`;
+    this.transactionHistoryUrl = `${Constants.apiHost}${Constants.apiPrefix}`;
   }
   public getPullPayment(): Observable<any> {
     console.log('url', this.actionUrl);
     return this.http.get(this.actionUrl, { headers: this.headers });
+  }
+  public getTreasuryAddress(): Observable<any> {
+    console.log('url', this.treasuryAddressUrl);
+    return this.http.get(this.treasuryAddressUrl, { headers: this.headers });
+  }
+  public getTransactionHistory(): Observable<any> {
+    console.log('url', this.transactionHistoryUrl);
+    return this.http.get(this.transactionHistoryUrl, { headers: this.headers });
   }
 }

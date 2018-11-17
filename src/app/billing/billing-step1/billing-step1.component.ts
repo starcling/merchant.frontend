@@ -1,5 +1,6 @@
 import { Component, OnInit, NgModule } from '@angular/core';
 import { Router } from '@angular/router';
+import { BillingServiceStep1 } from './billing-step1.service';
 
 @Component({
   selector: 'app-billing-step1',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 export class BillingStep1Component implements OnInit {
   model: any = {};
   showerror: boolean;
-  constructor(private router: Router) {}
+  constructor(private router: Router, private service: BillingServiceStep1) {}
 
   ngOnInit() {}
   onSubmit(data) {
@@ -17,6 +18,7 @@ export class BillingStep1Component implements OnInit {
       this.showerror = true;
     } else {
       this.showerror = false;
+      this.service.setValues(this.model);
       this.router.navigate(['/billing/step2']);
     }
   }

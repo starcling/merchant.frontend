@@ -68,7 +68,13 @@
     </div>
     <div class="btCtrl col-xs-12 col-sm-10 col-md-11">
       <button class="backbtn" href="" routerLink="/billing/step1">Back</button>
-      <button [disabled]="!f.form.valid" class="continuebtn btn btn-default" href="" routerLink="/billing/step3">
+      <button
+        [disabled]="!f.form.valid"
+        class="continuebtn btn btn-default"
+        href=""
+        routerLink="/billing/step3"
+        (click)="onSubmit()"
+      >
         Continue
       </button>
     </div>

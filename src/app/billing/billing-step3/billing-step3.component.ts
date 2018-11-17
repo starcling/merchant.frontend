@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { BillingServiceStep3 } from './billing-step3.service';
 
 @Component({
   selector: 'app-billing-step3',
@@ -9,7 +10,7 @@ import { Router } from '@angular/router';
 export class BillingStep3Component implements OnInit {
   model: any = {};
   public selectOption: any;
-  constructor(private router: Router) {
+  constructor(private router: Router, private service: BillingServiceStep3) {
     this.selectOption = [
       {
         id: 1,
@@ -37,7 +38,9 @@ export class BillingStep3Component implements OnInit {
   ngOnInit() {}
   onSubmit(data) {
     if (data.value) {
-      this.router.navigate(['/billing/step4'], { queryParams: { billingAmount: this.model } });
+      console.log('This Model-->', this.model);
+      this.service.setValues(this.model);
+      this.router.navigate(['/billing/step4']);
     }
     return this.model;
   }

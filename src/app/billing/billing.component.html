@@ -23,12 +23,16 @@
     <div class="bm-main flex-center-center">
       <div class="billingBoxCont">
         <div *ngFor="let array of sample" class="col-xs-12 col-sm-3 col-md-4 single-class">
-          <div class="billingBox active">
+          <div [ngClass]="array.typeID == 1 ? 'type1Color' : 'type2Color'" class="billingBox active">
             <div class="boxHead">
-              <div class="ImgCont"><img src="assets/images/refresh.svg" width="15" /></div>
-              SINGLE
+              <div class="ImgCont">
+                <img src="assets/images/refresh.svg" width="15" />
+                <p [ngClass]="array.typeID == 1 ? 'type1header' : 'type2header'">
+                  {{ array.typeID == 1 ? 'Single' : 'Recurring' }}
+                </p>
+              </div>
               <!-- <div class="noBilling"> -->
-              <img src="assets/images/3Dotted.png" class="billingImg1" width="10" />
+              <img src="assets/images/3Dotted.png" class="billingImg1" width="10" (click)="open(content)" />
               <!-- </div> -->
             </div>
 
@@ -38,7 +42,7 @@
                   {{ array.title }} <br />
                   <span>{{ array.description }}</span>
                 </p>
-                <a href="">1 day</a>
+                <a href="">{{ array.frequency }} day</a>
               </div>
               <div class="large">
                 <div>
@@ -48,13 +52,51 @@
                 </div>
               </div>
               <div class="footerText">
-                <p>PMA 309,028.18</p>
-                <span>Subscribers 2.1K</span>
+                <p>
+                  {{ pullPaymentsCurrency ? pullPaymentsCurrency : 'PMA'
+                  }}{{ pullPaymentsBalance ? pullPaymentsBalance : ('0.0' | number: '1.2') }}
+                </p>
+                <span>Subscribers {{ sample.length }}</span>
               </div>
             </div>
           </div>
+          <ng-template #content let-c="close" let-d="dismiss">
+            <div class="modelpop">
+              <div class="modal-header">
+                <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body"><p>Hello, World!</p></div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" (click)="c('Saveclick')">Edit</button>
+                <button type="button" class="btn btn-outline-dark" (click)="d('Saveclick')" (click)="open1(delete)">
+                  Delete
+                </button>
+                <!-- (click)="open1(array)" -->
+              </div>
+            </div>
+          </ng-template>
+          <ng-template #delete let-c="close" let-d="dismiss">
+            <div class="modelpop">
+              <div class="modal-header">
+                <button type="button" class="close" aria-label="Close" (click)="d('Cross click')">
+                  <span aria-hidden="true">&times;</span>
+                </button>
+              </div>
+              <div class="modal-body"><p>Are Sure Do you want Delete ?</p></div>
+              <div class="modal-footer">
+                <button type="button" class="btn btn-outline-dark" (click)="deletePull(array)" (click)="d('Saveclick')">
+                  Yes
+                </button>
+                <button type="button" class="btn btn-outline-dark" (click)="c('Saveclick')">No</button>
+              </div>
+            </div>
+          </ng-template>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<!-- <button class="btn btn-lg btn-outline-primary" (click)="open(content)">Launch demo modal</button> -->

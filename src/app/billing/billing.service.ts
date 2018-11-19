@@ -11,6 +11,7 @@ import { User } from '@app/models/User';
 })
 export class BillingService {
   public actionUrl: string;
+  public actionUrl1: string;
   public token: string;
   public user: any;
   public userID: string;
@@ -19,12 +20,20 @@ export class BillingService {
     'api-request-source': 'portal'
   });
   constructor(private _http: HttpClient) {
-    //this.userID = localStorage.getItem('merchantID');
     this.actionUrl = `${Constants.apiPrefix}pull-payment-models/`;
-    //localStorage.removeItem('merchantID');
+    this.actionUrl1 = `${Constants.apiPrefix}balance/all/`;
   }
 
   public Getpull(): Observable<any> {
+    console.log('API Hit GET');
     return this._http.get(this.actionUrl, { headers: this.headers });
+  }
+  public Deletepull(data): Observable<any> {
+    console.log('API Hit');
+    return this._http.delete(this.actionUrl + data, { headers: this.headers });
+  }
+  public getPullPayment(): Observable<any> {
+    console.log('url', this.actionUrl);
+    return this._http.get(this.actionUrl1, { headers: this.headers });
   }
 }

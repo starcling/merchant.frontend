@@ -48,7 +48,7 @@ export class BillingStep4Component implements OnInit {
   publish() {
     this.service4.billingPost(this.data).subscribe(result => {
       if (result.success == true) {
-        this.router.navigate(['/dashboard']);
+        this.router.navigate(['./billing/billimgmodeloverview']);
       }
     });
   }

@@ -8,6 +8,7 @@ import { BillingStep3Component } from './billing-step3/billing-step3.component';
 import { BillingStep4Component } from '@app/billing/billing-step4/billing-step4.component';
 import { BillingRecurringStep3Component } from './billing-step3/billing-recurring-step3/billing-recurring-step3.component';
 import { BillingHybridStep3Component } from './billing-step3/billing-hybrid-step3/billing-hybrid-step3.component';
+import { BillingModelOverviewComponent } from './billing-model-overview/billing-model-overview.component';
 
 const routes: Routes = [
   Shell.childRoutes([
@@ -18,7 +19,8 @@ const routes: Routes = [
     { path: 'billing/step3', component: BillingStep3Component },
     { path: 'billing/step4', component: BillingStep4Component },
     { path: 'billing/step3/recurring', component: BillingRecurringStep3Component },
-    { path: 'billing/step3/hybrid', component: BillingHybridStep3Component }
+    { path: 'billing/step3/hybrid', component: BillingHybridStep3Component },
+    { path: 'billing/billimgmodeloverview', component: BillingModelOverviewComponent }
   ])
 ];
 

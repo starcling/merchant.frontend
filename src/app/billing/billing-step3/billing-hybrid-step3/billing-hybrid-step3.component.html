@@ -1,6 +1,6 @@
 <div class="billingModelContainer">
   <div class="bm-header"><b>Single + Recurring Billing Models</b></div>
-  <form #hybirdForm="ngForm" (ngSubmit)="onSubmit(f)">
+  <form #hybirdForm="ngForm" (ngSubmit)="hybirdForm.valid && onSubmit(hybirdForm)">
     <div class="bm-main flex-center-center">
       <div class="billingBoxCont">
         <div class="row">
@@ -38,13 +38,28 @@
             <label>Start recurring billing after</label>
             <div class="row">
               <div class="col-xs-12 col-sm-3 col-md-3 dayinput">
-                <input class="input" type="number" placeholder="No." name="days" min="1" max="31" />
+                <input
+                  class="input"
+                  type="number"
+                  placeholder="No."
+                  name="days"
+                  min="1"
+                  max="31"
+                  [(ngModel)]="model.days"
+                  #days="ngModel"
+                  required
+                  [ngClass]="{ 'is-invalid': hybirdForm.submitted && days.errors?.required }"
+                />
               </div>
               <div class="col-xs-12 col-sm-6 col-md-6 calendarselect">
-                <select name="calendar">
-                  <option value="Day">Day</option>
-                  <option value="Month">Month</option>
-                  <option value="Year">Year</option>
+                <select
+                  name="calendar"
+                  [(ngModel)]="model.calendar"
+                  #calendar="ngModel"
+                  required
+                  [ngClass]="{ 'is-invalid': hybirdForm.submitted && calendar.errors?.required }"
+                >
+                  <option *ngFor="let item of calendarlist" [ngValue]="item.label">{{ item.label }}</option>
                 </select>
               </div>
             </div>
@@ -54,11 +69,14 @@
             <label>Amount charged at the begining of each period</label>
             <div class="row ">
               <div class="col-xs-12 col-sm-3 col-md-3">
-                <select name="PeriodCurrency">
-                  <option value="USD">USD</option>
-                  <option value="EUR">EUR</option>
-                  <option value="GBP">GBP</option>
-                  <option value="JPY">JPY</option>
+                <select
+                  name="PeriodCurrency"
+                  [(ngModel)]="model.PeriodCurrency"
+                  #PeriodCurrency="ngModel"
+                  required
+                  [ngClass]="{ 'is-invalid': hybirdForm.submitted && PeriodCurrency.errors?.required }"
+                >
+                  <option *ngFor="let item of amountCurrency" [ngValue]="item.label">{{ item.label }}</option>
                 </select>
               </div>
               <div class="col-xs-12 col-sm-6 col-md-6 amountinput">
@@ -68,6 +86,10 @@
                   id="Periodprice"
                   placeholder="$ 0.00"
                   name="Periodprice"
+                  [(ngModel)]="model.Periodprice"
+                  #Periodprice="ngModel"
+                  required
+                  [ngClass]="{ 'is-invalid': hybirdForm.submitted && Periodprice.errors?.required }"
                 />
               </div>
             </div>
@@ -76,13 +98,28 @@
             <label>Customer will be billed every</label>
             <div class="row">
               <div class="col-xs-12 col-sm-3 col-md-3 dayinput">
-                <input class="input" type="number" placeholder="No." name="days" min="1" max="31" />
+                <input
+                  class="input"
+                  type="number"
+                  placeholder="No."
+                  name="billingdays"
+                  min="1"
+                  max="31"
+                  [(ngModel)]="model.billingdays"
+                  #billingdays="ngModel"
+                  required
+                  [ngClass]="{ 'is-invalid': hybirdForm.submitted && billingdays.errors?.required }"
+                />
               </div>
               <div class="col-xs-12 col-sm-6 col-md-6 calendarselect">
-                <select name="calendar">
-                  <option value="Day">Day</option>
-                  <option value="Month">Month</option>
-                  <option value="Year">Year</option>
+                <select
+                  name="billingcalendar"
+                  [(ngModel)]="model.billingcalendar"
+                  #billingcalendar="ngModel"
+                  required
+                  [ngClass]="{ 'is-invalid': hybirdForm.submitted && billingcalendar.errors?.required }"
+                >
+                  <option *ngFor="let item of calendarlist" [ngValue]="item.label">{{ item.label }}</option>
                 </select>
               </div>
             </div>
@@ -91,7 +128,17 @@
             <label>Number of billing cycle</label>
             <div class="row">
               <div class="col-xs-12 col-sm-3 col-md-3 dayinput">
-                <input class="input" type="number" placeholder="No." name="days" min="1" />
+                <input
+                  class="input"
+                  type="number"
+                  placeholder="No."
+                  name="Recurringdays"
+                  min="1"
+                  [(ngModel)]="model.Recurringdays"
+                  #Recurringdays="ngModel"
+                  required
+                  [ngClass]="{ 'is-invalid': hybirdForm.submitted && Recurringdays.errors?.required }"
+                />
               </div>
             </div>
           </div>

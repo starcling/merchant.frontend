@@ -33,6 +33,7 @@ export class BillingStep3Component implements OnInit {
         value: 4
       }
     ];
+    this.model.rupees = this.selectOption[0].label;
   }
 
   ngOnInit() {}

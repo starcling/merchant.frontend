@@ -1,6 +1,7 @@
 .billingModelContainer {
   width: 100%;
   margin-bottom: 20px;
+  font-family: "notoSansRegular";
   .bm-header {
     background-color: #fcfdff;
     height: 50px;
@@ -36,6 +37,7 @@
       select.is-invalid {
         border-color: #eb3232 !important;
         box-shadow: none;
+        border-width: 1px;
       }
       input {
         width: 300px;
@@ -83,6 +85,7 @@
       .amountinput input.is-invalid {
         border-color: #eb3232 !important;
         box-shadow: none;
+        border-width: 1px;
       }
     }
   }

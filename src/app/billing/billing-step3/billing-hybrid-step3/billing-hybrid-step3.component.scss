@@ -1,14 +1,14 @@
 .billingModelContainer {
   width: 100%;
   margin-bottom: 20px;
-  font-family: "Noto Sans Semibold";
+  font-family: "notoSansRegular";
   .bm-header {
     background-color: #fcfdff;
     height: 50px;
     margin-bottom: 2px;
     padding: 14px 30px;
     font-size: 18px;
-    font-style: "bold";
+    font-style: "semibold";
     line-height: 29px;
     .text-right {
       text-align: right;
@@ -114,9 +114,10 @@
         box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
         float: right;
       }
-      .amountinput input.is-invalid {
+      input.is-invalid {
         border-color: #eb3232 !important;
         box-shadow: none;
+        border-width: 1px;
       }
     }
   }

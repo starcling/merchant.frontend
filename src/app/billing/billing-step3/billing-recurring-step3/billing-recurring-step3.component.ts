@@ -69,7 +69,7 @@ export class BillingRecurringStep3Component implements OnInit {
   onSubmit(data) {
     console.log(this.model);
     if (data.value) {
-      this.router.navigate(['billing/step4/recurring']);
+      this.router.navigate(['billing/recurring/step4']);
     }
   }
 }

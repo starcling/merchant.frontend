@@ -37,15 +37,14 @@
 }
 .char-msg {
   font-size: 12px;
-  // margin-left: 480px;
+  margin-left: 480px;
 }
 
-.ng-valid[required],
-.ng-valid.required {
-  border-left: 5px solid #42a948; /* green */
-}
-.ng-invalid:not(form) {
-  border-left: 5px solid #a94442; /* red */
+input.is-invalid,
+textarea.is-invalid {
+  border-color: #eb3232 !important;
+  box-shadow: none !important;
+  border-width: 1px;
 }
 .backbtn {
   display: block;
@@ -75,9 +74,27 @@
 .notifyMsg {
   color: red;
   font-size: 12px;
+  padding-left: 0px;
+}
+.ntfyMsg {
+  color: red;
+  font-size: 12px;
   padding-left: 20px;
 }
 .btCtrl {
   padding-left: 30px;
-  padding-bottom: 30px;
+  padding-bottom: 50px;
+}
+.bm-header {
+  background-color: #fcfdff;
+  height: 50px;
+  margin-bottom: 2px;
+  padding: 14px 30px;
+  font-size: 18px;
+  font-style: "bold";
+  line-height: 29px;
+  margin-left: -10;
+  .text-right {
+    text-align: right;
+  }
 }

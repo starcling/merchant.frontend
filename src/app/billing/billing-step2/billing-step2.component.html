@@ -1,5 +1,6 @@
-<form name="form" #f="ngForm">
-  <div class="row step2container">
+<div class="bm-header col-xs-12"><b>Single Billing Models</b></div>
+<form name="form" #f="ngForm" (ngSubmit)="f.valid && onSubmit(f)">
+  <div class=" row step2container">
     <div class="col-xs-12 col-sm-8 col-md-8">
       <div class="form-group">
         <label class="title">Product Name</label> <br />
@@ -8,19 +9,24 @@
           type="text"
           class="productInput"
           name="productName"
-          placeholder="Enter your product name"
+          placeholder="Enter your Product Name"
           [(ngModel)]="model.productName"
           #productName="ngModel"
-          [ngClass]="{ 'is-invalid': f.submitted && f.productName.errors }"
+          [ngClass]="{ 'is-invalid': f.submitted && productName.errors?.required }"
           required
           minlength="2"
         />
         <br />
-        <div class="notifyMsg" [hidden]="!productName.errors?.required">Product name must be atleast 2 characters!</div>
+        <div *ngIf="f.submitted">
+          <div class="ntfyMsg" [hidden]="!productName.errors?.required">Product name is required</div>
+          <div class="ntfyMsg" [hidden]="!productName.errors?.minlength">
+            Product name must be atleast 2 characters!
+          </div>
+        </div>
       </div>
       <div class="form-group">
         <label class="title">Billing Model Name</label> <br />
-        <label class="subTitle">Add a name that describes your pricing plan</label> <br />
+        <label class="subTitle">Add a name that best describes your pricing plan</label> <br />
         <input
           type="text"
           class="productInput"
@@ -28,13 +34,16 @@
           placeholder="Choose a Billing Model Name"
           [(ngModel)]="model.billingModelName"
           #billingModelName="ngModel"
-          [ngClass]="{ 'is-invalid': f.submitted && f.billingModelName.errors }"
+          [ngClass]="{ 'is-invalid': f.submitted && billingModelName.errors?.required }"
           required
           minlength="2"
         />
         <br />
-        <div class="notifyMsg" [hidden]="!billingModelName.errors?.required">
-          Billing model name must be atleast 2 characters!
+        <div *ngIf="f.submitted">
+          <div class="ntfyMsg" [hidden]="!billingModelName.errors?.required">Billing model name is required!</div>
+          <div class="ntfyMsg" [hidden]="!billingModelName.errors?.minlength">
+            Billing model name must be atleast 2 characters!
+          </div>
         </div>
       </div>
       <div class="form-group">
@@ -46,20 +55,24 @@
           placeholder="What does your billing model?"
           [(ngModel)]="model.billModelDes"
           #billModelDes="ngModel"
-          [ngClass]="{ 'is-invalid': f.submitted && f.billModelDes.errors }"
+          [ngClass]="{ 'is-invalid': f.submitted && billModelDes.errors?.required }"
           required
           minlength="2"
           maxlength="140"
         ></textarea
         ><br />
-
+        <div><label class="char-msg">140 characters</label></div>
         <div class="col-md-12">
           <div class="col-md-8">
-            <div class="notifyMsg" [hidden]="!billModelDes.errors?.required">
-              Billing model description must be atleast 2 characters!
+            <div *ngIf="f.submitted">
+              <div class="notifyMsg" [hidden]="!billModelDes.errors?.required">
+                Billing model description is required!
+              </div>
+              <div class="notifyMsg" [hidden]="!billModelDes.errors?.minlength">
+                Billing model description must be atleast 2 characters!
+              </div>
             </div>
           </div>
-          <div class="col-md-4"><label class="char-msg">140 characters</label></div>
         </div>
       </div>
     </div>
@@ -68,15 +81,7 @@
     </div>
     <div class="btCtrl col-xs-12 col-sm-10 col-md-11">
       <button class="backbtn" href="" routerLink="/billing/step1">Back</button>
-      <button
-        [disabled]="!f.form.valid"
-        class="continuebtn btn btn-default"
-        href=""
-        routerLink="/billing/step3"
-        (click)="onSubmit()"
-      >
-        Continue
-      </button>
+      <button class="continuebtn btn btn-default">Continue</button>
     </div>
   </div>
 </form>

@@ -1,8 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-// import { first } from 'rxjs/operators';
 import { BillingServiceStep2 } from './billing-step2.service';
-// import { publicDecrypt } from 'crypto';
+import { BillingServiceStep1 } from '../billing-step1/billing-step1.service';
 
 @Component({
   selector: 'app-billing-step2',
@@ -11,10 +10,20 @@ import { BillingServiceStep2 } from './billing-step2.service';
 })
 export class BillingStep2Component implements OnInit {
   model: any = {};
-  constructor(private router: Router, private route: ActivatedRoute, private service: BillingServiceStep2) {}
-  ngOnInit() {}
+  datavalidation: any = {};
+  constructor(
+    private router: Router,
+    private route: ActivatedRoute,
+    private service: BillingServiceStep2,
+    private billingdata: BillingServiceStep1
+  ) {}
+  ngOnInit() {
+    this.datavalidation = this.billingdata.model;
+  }
   onSubmit() {
     this.service.setValues(this.model);
-    this.router.navigate(['/billing/step3']);
+    if (this.datavalidation.billing == 'Single') this.router.navigate(['/billing/step3']);
+    else if (this.datavalidation.billing == 'Recurring') this.router.navigate(['/billing/step3/recurring']);
+    else if (this.datavalidation.billing == 'Single and Recurring') this.router.navigate(['billing/step3/hybrid']);
   }
 }

@@ -1,0 +1,134 @@
+.billingModelContainer {
+  width: 100%;
+  margin-bottom: 20px;
+  font-family: "Noto Sans Semibold";
+  .bm-header {
+    background-color: #fcfdff;
+    height: 50px;
+    margin-bottom: 2px;
+    padding: 14px 30px;
+    font-size: 18px;
+    font-style: "bold";
+    line-height: 29px;
+    .text-right {
+      text-align: right;
+    }
+  }
+  .bm-main {
+    background-color: #ffffff;
+    padding: 50px 30px;
+    min-height: 120px;
+
+    .billingBoxCont {
+      width: 100%;
+      label {
+        font-style: 11px;
+        color: #333333;
+      }
+      .firstblock {
+        border-bottom: 1px solid #959faf;
+        padding: 0px 0px 34px 0px;
+      }
+      select {
+        width: 130px;
+        height: 38px;
+        border-color: #ccd1d9 solid;
+        background-color: #fcfdff;
+        font-size: 14px;
+        line-height: 21px;
+        border-radius: 3px;
+        padding: 0px 20px;
+      }
+      select.is-invalid {
+        border-color: #eb3232 !important;
+        box-shadow: none;
+      }
+      .amountinput {
+        margin: 0px 10px;
+        input {
+          width: 300px;
+          height: 38px;
+          border-radius: 1px;
+          padding: 0px 20px;
+          font-size: 14px;
+          line-height: 21px;
+          ::placeholder {
+            color: #bdbdbd;
+          }
+        }
+      }
+      .dayinput {
+        input {
+          width: 130px;
+          height: 38px;
+          border-color: #cccccc;
+          background-color: #fcfdff;
+          font-size: 14px;
+          line-height: 21px;
+          border-radius: 3px;
+          padding: 0px 0px 0px 20px;
+        }
+        ::placeholder {
+          color: #bdbdbd;
+        }
+      }
+      .calendarselect {
+        margin: 0px 10px;
+        select {
+          width: 300px;
+          height: 38px;
+          border-color: #cccccc;
+          background-color: #fcfdff;
+          border-radius: 1px;
+          padding: 0px 20px;
+          font-size: 14px;
+          line-height: 21px;
+        }
+      }
+
+      .singleimg {
+        width: 222px;
+        height: 442px;
+      }
+      .backbtn {
+        display: block;
+        background-color: #ffffff;
+        color: #1c67f5;
+        width: 180px;
+        height: 38px;
+        border-radius: 3px;
+        border-color: #1c67f5;
+        margin-top: 25px;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+        float: left;
+      }
+      .continuebtn {
+        display: block;
+        background-color: #1c67f5;
+        color: #ffffff;
+        width: 180px;
+        height: 38px;
+        border-radius: 3px;
+        border: none;
+        margin-top: 25px;
+        box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+        float: right;
+      }
+      .amountinput input.is-invalid {
+        border-color: #eb3232 !important;
+        box-shadow: none;
+      }
+    }
+  }
+}
+
+.flex-center-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.notifyMsg {
+  color: #eb3232;
+  font-size: 12px;
+  text-align: right;
+}

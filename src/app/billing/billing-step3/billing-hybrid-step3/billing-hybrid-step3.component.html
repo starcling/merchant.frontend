@@ -1,0 +1,109 @@
+<div class="billingModelContainer">
+  <div class="bm-header"><b>Single + Recurring Billing Models</b></div>
+  <form #hybirdForm="ngForm" (ngSubmit)="onSubmit(f)">
+    <div class="bm-main flex-center-center">
+      <div class="billingBoxCont">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-md-8">
+            <label>Inital charge</label>
+            <div class="row ">
+              <div class="col-xs-12 col-sm-3 col-md-3">
+                <select
+                  name="Currency"
+                  [(ngModel)]="model.Currency"
+                  #Currency="ngModel"
+                  required
+                  [ngClass]="{ 'is-invalid': hybirdForm.submitted && Currency.errors?.required }"
+                >
+                  <option *ngFor="let item of amountCurrency" [ngValue]="item.label">{{ item.label }}</option>
+                </select>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6 amountinput">
+                <input
+                  class="input"
+                  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                  placeholder="$ 0.00"
+                  name="price"
+                  [(ngModel)]="model.price"
+                  #price="ngModel"
+                  required
+                  [ngClass]="{ 'is-invalid': hybirdForm.submitted && price.errors?.required }"
+                />
+                <div *ngIf="hybirdForm.submitted">
+                  <div class="notifyMsg" [hidden]="!price.errors?.required">Price is required!</div>
+                </div>
+              </div>
+            </div>
+
+            <label>Start recurring billing after</label>
+            <div class="row">
+              <div class="col-xs-12 col-sm-3 col-md-3 dayinput">
+                <input class="input" type="number" placeholder="No." name="days" min="1" max="31" />
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6 calendarselect">
+                <select name="calendar">
+                  <option value="Day">Day</option>
+                  <option value="Month">Month</option>
+                  <option value="Year">Year</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="col-xs-12 col-sm-10 col-md-10 firstblock"></div>
+
+            <label>Amount charged at the begining of each period</label>
+            <div class="row ">
+              <div class="col-xs-12 col-sm-3 col-md-3">
+                <select name="PeriodCurrency">
+                  <option value="USD">USD</option>
+                  <option value="EUR">EUR</option>
+                  <option value="GBP">GBP</option>
+                  <option value="JPY">JPY</option>
+                </select>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6 amountinput">
+                <input
+                  class="input"
+                  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                  id="Periodprice"
+                  placeholder="$ 0.00"
+                  name="Periodprice"
+                />
+              </div>
+            </div>
+
+            <label>Billing Cycle</label><br />
+            <label>Customer will be billed every</label>
+            <div class="row">
+              <div class="col-xs-12 col-sm-3 col-md-3 dayinput">
+                <input class="input" type="number" placeholder="No." name="days" min="1" max="31" />
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6 calendarselect">
+                <select name="calendar">
+                  <option value="Day">Day</option>
+                  <option value="Month">Month</option>
+                  <option value="Year">Year</option>
+                </select>
+              </div>
+            </div>
+
+            <label>Recurrence</label><br />
+            <label>Number of billing cycle</label>
+            <div class="row">
+              <div class="col-xs-12 col-sm-3 col-md-3 dayinput">
+                <input class="input" type="number" placeholder="No." name="days" min="1" />
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-4 col-md-4"><img src="assets/images/step3-hybird.png" class="singleimg" /></div>
+
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <button type="reset" routerLink="/billing/step2" class="backbtn">back</button>
+            <button type="submit" class="continuebtn">Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

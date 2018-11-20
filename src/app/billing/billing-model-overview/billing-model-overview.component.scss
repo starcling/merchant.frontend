@@ -242,3 +242,66 @@ table {
   color: #fff !important;
   text-transform: lowercase !important;
 }
+.QRContent {
+  border: 1px solid #cccccc;
+  border-radius: 4.75px;
+}
+.QRContent p {
+  padding: 8px;
+  font-size: 13px;
+}
+.paymentBtn {
+  padding-left: 20px;
+  margin-bottom: 10px;
+}
+.transaction-table {
+  margin-top: 50px;
+  label {
+    margin-bottom: 0px;
+  }
+  table {
+    border: 1px solid #c4c8d1;
+    text-align: left;
+    thead {
+      width: 100%;
+      tr {
+        th {
+          font-size: 15px;
+          font-weight: normal;
+        }
+      }
+    }
+    tbody {
+      width: 100%;
+      tr {
+        td {
+          font-size: 14px;
+        }
+        background-color: #f4f6fb;
+      }
+    }
+  }
+}
+
+ul.pagination {
+  margin-bottom: 6px;
+  float: right;
+  li {
+    padding: 6px 1px;
+    a {
+      border: none;
+      border-radius: 50%;
+    }
+    a.active {
+      background-color: #1c67f5;
+      color: #ffffff;
+    }
+  }
+}
+ul.pagination li:first-child,
+ul.pagination li:last-child {
+  padding: 0px;
+}
+.txHash {
+  color: #1c67f5;
+}

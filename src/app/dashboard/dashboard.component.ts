@@ -22,6 +22,7 @@ export class DashboardComponent implements OnInit {
   gasBalance;
   gasCurrency;
   value: string = '0x3ef78A06d3FBA9E9508df0F4f0865Ca9261F992F';
+  transactionHistorArray;
 
   constructor(private dashboardService: DashboardService) {}
 
@@ -52,6 +53,15 @@ export class DashboardComponent implements OnInit {
     inputElement.setSelectionRange(0, 0);
   }
   transactionHistory() {
-    this.dashboardService.getTransactionHistory().subscribe(result => {});
+    this.dashboardService.getTransactionHistory().subscribe(result => {
+      this.transactionHistorArray = result.data;
+    });
+  }
+  txhash() {
+    console.log('this funcion is called');
+    // var data = "0xd5bb7fe4284f34f33becb66f166d26f4bf8fcb97d0184c51b9b1d8604510bcba"
+    this.dashboardService.redirectToEtherscan().subscribe(result => {
+      console.log('this funcion is called 1');
+    });
   }
 }

@@ -15,6 +15,7 @@ export class DashboardService {
   private actionUrl: string;
   private treasuryAddressUrl;
   private transactionHistoryUrl;
+  private etherscanUrl;
 
   private headers: HttpHeaders = new HttpHeaders({
     'Content-Type': 'application/json',
@@ -26,17 +27,18 @@ export class DashboardService {
     this.actionUrl = `${Constants.apiHost}${Constants.apiPrefix}balance/all/`;
     this.treasuryAddressUrl = `${Constants.apiHost}${Constants.apiPrefix}address/treasury`;
     this.transactionHistoryUrl = `${Constants.apiHost}${Constants.apiPrefix}`;
+    this.etherscanUrl = `https://etherscan.io/tx/0xd5bb7fe4284f34f33becb66f166d26f4bf8fcb97d0184c51b9b1d8604510bcba`;
   }
   public getPullPayment(): Observable<any> {
-    console.log('url', this.actionUrl);
     return this.http.get(this.actionUrl, { headers: this.headers });
   }
   public getTreasuryAddress(): Observable<any> {
-    console.log('url', this.treasuryAddressUrl);
     return this.http.get(this.treasuryAddressUrl, { headers: this.headers });
   }
   public getTransactionHistory(): Observable<any> {
-    console.log('url', this.transactionHistoryUrl);
     return this.http.get(this.transactionHistoryUrl, { headers: this.headers });
+  }
+  public redirectToEtherscan(): Observable<any> {
+    return this.http.get(this.etherscanUrl, { headers: this.headers });
   }
 }

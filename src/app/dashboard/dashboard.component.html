@@ -78,11 +78,22 @@
         </tr>
       </thead>
       <tbody>
+        <!--
+          <tr *ngFor= let val of transactionHistorArray >
+            <td>{{val.date}}</td>
+            <td>{{val.billingModel}}</td>
+            <td>{{val.status}}</td>
+            <td>{{val.TxHash}}</td>
+            <td>{{val.customerID}}</td>
+            <td>{{val.pullPaymentsAccountAddress}}</td>
+            <td>{{val.balance}}</td>
+          </tr>
+        -->
         <tr>
           <td>13 Jun</td>
           <td>Gold</td>
           <td>(2/6)</td>
-          <td>Oxdf4c18485dea496d6...</td>
+          <td (click)="txhash()">Oxdf4c18485dea496d6...</td>
           <td>723487</td>
           <td>Oxdf4c18485dea496d6...</td>
           <td>230,023.76</td>

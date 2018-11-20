@@ -31,7 +31,7 @@ import { currencyPipe } from '@app/currency.pipe';
 import { MainPipe } from '@app/main-pipe.module';
 import { NgxQRCodeModule } from 'ngx-qrcode2';
 import { BillingHybirdStep4Component } from './billing/billing-step4/billing-hybird-step4/billing-hybird-step4.component';
-
+import { BillingRecurringStep4Component } from './billing/billing-step4/billing-recurring-step4/billing-recurring-step4.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -58,6 +58,7 @@ import { BillingHybirdStep4Component } from './billing/billing-step4/billing-hyb
     BillingStep1Component,
     BillingStep3Component,
     BillingRecurringStep3Component,
+    BillingRecurringStep4Component,
     BillingHybirdStep4Component
   ],
   providers: [

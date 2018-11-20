@@ -15,6 +15,7 @@ export class BillingModelOverviewComponent implements OnInit {
     this.id = localStorage.getItem('publishId');
     this.service.getByIdBillingModel(this.id).subscribe(result => {
       console.log('result of overview', result);
+      localStorage.removeItem('publishId');
     });
   }
 }

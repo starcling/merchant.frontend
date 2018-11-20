@@ -1,0 +1,161 @@
+<div class="billingModelContainer">
+  <div class="bmr-header"><b>Recurring Billing Models</b></div>
+  <form #f="ngForm" (ngSubmit)="f.valid && onSubmit(f)">
+    <div class="bmr-main flex-center-center">
+      <div class="billingBoxCont">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-md-8">
+            <label>Amount charged at the begining of the period</label>
+            <div class="row ">
+              <div class="col-xs-12 col-sm-3 col-md-3">
+                <select
+                  name="rupees"
+                  [(ngModel)]="model.rupees"
+                  #rupees="ngModel"
+                  required
+                  [ngClass]="{ 'is-invalid': f.submitted && rupees.errors?.required }"
+                >
+                  <option *ngFor="let item of selectOption" [selected]="item.value === 0" [ngValue]="item.label">{{
+                    item.label
+                  }}</option>
+                </select>
+              </div>
+              <div class="col-xs-12 col-sm-7 col-md-7 amountinput">
+                <input
+                  class="input"
+                  id="amount"
+                  placeholder="$ 0.00"
+                  name="amount"
+                  [(ngModel)]="model.amount"
+                  required
+                  #amountentry="ngModel"
+                  [ngClass]="{ 'is-invalid': f.submitted && amountentry.errors?.required }"
+                />
+                <div *ngIf="f.submitted">
+                  <div class="notifyMsg" [hidden]="!amountentry.errors?.required">Amount is required!</div>
+                </div>
+              </div>
+            </div>
+            <div class="row ">
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <label>Billing Cycle</label> <br />
+                <label>Customers will be billed everyday</label>
+                <div class="row">
+                  <div class="col-xs-12 col-sm-3 col-md-3">
+                    <input
+                      class="col-xs-12 col-sm-11 col-md-11"
+                      placeholder="No."
+                      type="number"
+                      name="No1"
+                      [(ngModel)]="model.No1"
+                      required
+                      #NoOfRecuurence1="ngModel"
+                      [ngClass]="{ 'is-invalid': f.submitted && NoOfRecuurence1.errors?.required }"
+                    />
+                  </div>
+                  <div class="col-xs-12 col-sm-7 col-md-7">
+                    <select name="Period1" [(ngModel)]="model.Period1">
+                      <option *ngFor="let option of recurrenceOption" [ngValue]="option.label">{{
+                        option.label
+                      }}</option>
+                      <!--
+                        <option value="Days">Days</option>
+                        <option value="Weeks">Month</option>
+                        <option value="Months">Year</option>
+                      -->
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row ">
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <label>Recurrences</label> <br />
+                <label>Number of billing cycles</label>
+                <div class="row">
+                  <div class="col-xs-12 col-sm-3 col-md-3">
+                    <input
+                      class="col-xs-12 col-sm-11 col-md-11"
+                      placeholder="No."
+                      type="number"
+                      name="No2"
+                      [(ngModel)]="model.No2"
+                      required
+                      #NoOfRecuurence2="ngModel"
+                      [ngClass]="{ 'is-invalid': f.submitted && NoOfRecuurence2.errors?.required }"
+                    />
+                    <!--
+                      <select name="No2" [(ngModel)]="model.No2">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                    -->
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row ">
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <label>Trail period</label> <br />
+                <label>Offer your customers a trail before they start paying you</label>
+                <div class="row">
+                  <div class="col-xs-12 col-sm-3 col-md-3">
+                    <label class="switch">
+                      <input type="checkbox" name="Toggle" [(ngModel)]="model.Toggle" />
+                      <span class="slider round"></span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="row ">
+              <div class="col-xs-12 col-sm-12 col-md-12">
+                <label>Start recurring billing after</label>
+                <div class="row">
+                  <div class="col-xs-12 col-sm-3 col-md-3">
+                    <input
+                      class="col-xs-12 col-sm-11 col-md-11"
+                      placeholder="No."
+                      type="number"
+                      name="No3"
+                      [(ngModel)]="model.No3"
+                      required
+                      #NoOfRecuurence3="ngModel"
+                      [ngClass]="{ 'is-invalid': f.submitted && NoOfRecuurence3.errors?.required }"
+                    />
+                    <!--
+                      <select name="No3" [(ngModel)]="model.No3">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                      </select>
+                    -->
+                  </div>
+                  <div class="col-xs-12 col-sm-7 col-md-7">
+                    <select name="Period2" [(ngModel)]="model.Period2">
+                      <option *ngFor="let option of recurrenceOption" [ngValue]="option.label">{{
+                        option.label
+                      }}</option>
+                      <!--
+                        <option [value]="Days" [selected]="model.Period2==Days">Days</option>
+                        <option [value]="Weeks">Weeks</option>
+                        <option [value]="Months">Months</option>
+                      -->
+                    </select>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <img src="assets/images/Step3-Recurring.png" class="singleimg" />
+          </div>
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <button class="backbtn">Back</button> <button type="submit" class="continuebtn">Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

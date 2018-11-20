@@ -1,0 +1,150 @@
+.billingModelContainer {
+  width: 100%;
+  margin-bottom: 20px;
+  .bmr-header {
+    background-color: #fcfdff;
+    height: 50px;
+    margin-bottom: 2px;
+    padding: 18px 30px;
+    font-size: 18px;
+    font-style: "bold";
+    .text-right {
+      text-align: right;
+    }
+  }
+}
+
+.bmr-main {
+  background-color: #ffffff;
+  padding: 50px 30px;
+  min-height: 120px;
+
+  .billingBoxCont {
+    width: 100%;
+    label {
+      font-style: 11px;
+      color: #333333;
+    }
+    select {
+      width: 130px;
+      height: 38px;
+      border-color: #ccd1d9 solid;
+      background-color: #fcfdff;
+      font-size: 14px;
+      line-height: 21px;
+      border-radius: 3px;
+      padding: 0px 20px;
+    }
+    input {
+      width: 300px;
+      height: 38px;
+      border-radius: 1px;
+      padding: 0px 20px;
+      font-size: 14px;
+      line-height: 21px;
+      ::placeholder {
+        color: #bdbdbd;
+      }
+    }
+    .amountinput {
+      margin: 0px 10px;
+    }
+    .singleimg {
+      width: 222px;
+      height: 442px;
+    }
+    .backbtn {
+      display: block;
+      background-color: #ffffff;
+      color: #1c67f5;
+      width: 180px;
+      height: 38px;
+      border-radius: 3px;
+      border-color: #1c67f5;
+      margin-top: 25px;
+      box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+      float: left;
+    }
+    .continuebtn {
+      display: block;
+      background-color: #1c67f5;
+      color: #ffffff;
+      width: 180px;
+      height: 38px;
+      border-radius: 3px;
+      border: none;
+      margin-top: 25px;
+      box-shadow: 0px 3px 4px rgba(0, 0, 0, 0.25);
+      float: right;
+    }
+  }
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 26px;
+  width: 26px;
+  left: 4px;
+  bottom: 4px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: #2196f3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.notifyMsg {
+  color: #eb3232;
+  font-size: 12px;
+  text-align: left;
+}

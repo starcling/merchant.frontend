@@ -29,34 +29,42 @@
   }
 }
 
-.ng-invalid.ng-touched:not(form) {
-  border-left: 4px solid theme-color("danger");
-}
+// .ng-invalid.ng-touched:not(form) {
+//   border-left: 4px solid theme-color("danger");
+// }
 
 .img-holder {
   display: inline-block;
-  position: absolute;
+  position: relative;
   top: 0;
   left: 0;
-  width: 40%;
-  min-height: 700px;
+  width: 38%;
+  min-height: 100vh;
   height: 100%;
   overflow: hidden;
-  background-image: linear-gradient(#5e62fa, #1c67f5);
   padding: 60px;
   text-align: center;
   z-index: 999;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#5e62fa+0,0c51d5+99 */
+  background: #5e62fa; /* Old browsers */
+  background: -moz-linear-gradient(top, #5e62fa 0%, #0c51d5 99%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #5e62fa 0%, #0c51d5 99%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(
+    to bottom,
+    #5e62fa 0%,
+    #0c51d5 99%
+  ); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#5e62fa', endColorstr='#0c51d5',GradientType=0 ); /* IE6-9 */
 
   .info-holder {
-    position: relative;
-    top: 50%;
-    -webkit-transform: translateY(-50%);
-    -moz-transform: translateY(-50%);
-    -ms-transform: translateY(-50%);
-    transform: translateY(-50%);
+    // position: relative;
+    // top: 50%;
+    // -webkit-transform: translateY(-50%);
+    // -moz-transform: translateY(-50%);
+    // -ms-transform: translateY(-50%);
+    // transform: translateY(-50%);
     img {
       width: 100%;
-      max-width: 256px;
     }
   }
   .bg {
@@ -73,8 +81,7 @@
 }
 
 .form-holder {
-  margin-left: 40%;
-  width: 100%;
+  display: inline-block;
 
   .form-content {
     position: relative;
@@ -86,47 +93,203 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 60px;
+    padding: 30px 60px;
     min-height: 100vh;
     .form-group {
       font-size: 15px;
       font-weight: 300;
     }
     .form-button {
-      margin-top: 100px;
+      margin-top: 80px;
     }
     .form-items {
       max-width: 340px;
       text-align: left;
+      margin-bottom: 20px;
     }
   }
+}
+
+.flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.invalid-feedback {
+  color: #eb3232;
+}
+.invalid-feedback > div {
+  text-align: right;
+}
+.website-logo {
+  position: absolute;
+  top: 50px;
+  left: 50px;
+}
+.field-container {
+  position: relative;
+}
+.field-container .errorIcon {
+  position: absolute;
+  right: -25px;
+  top: 52px;
+}
+.field-container input {
+  font-family: "notoSansRegular";
+  border: 1px solid transparent !important;
+}
+.field-container input.is-invalid {
+  border-color: #eb3232 !important;
+  box-shadow: none;
 }
 
 /* -----------------------------------
   2 - Responsive Styles
 ------------------------------------*/
 
-@media (min-height: 700px) {
+// Small devices ( phones, 576px)
+@media (max-width: 576px) {
+  .form-holder {
+    width: 100%;
+  }
   .img-holder {
-    position: fixed;
+    width: 100% !important;
+    height: 100px !important;
+    min-height: 100px;
+    .bg {
+      height: 100px !important;
+    }
+  }
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 577px) and (max-width: 768px) {
+  .form-holder {
+    width: 100%;
+  }
+  .img-holder {
+    width: 100% !important;
+    height: 100px !important;
+    min-height: 100px;
+    .bg {
+      height: 100px !important;
+    }
+  }
+}
+// Medium devices (tablets, 768px and up)
+@media (min-width: 769px) and (max-width: 991px) {
+  .form-holder {
+    width: 100%;
+  }
+  .img-holder {
+    width: 100% !important;
+    height: 100px !important;
+    min-height: 100px;
+    .bg {
+      height: 100px !important;
+    }
+  }
+}
+// Large devices (desktops, 992px and up)
+@media (min-width: 992px) and (max-width: 1200px) {
+  .info-holder {
+    width: 66%;
+    min-width: 200px;
+  }
+  .form-holder {
+    width: calc(62% - 4px);
+  }
+}
+// Extra large devices (large desktops, 1200px and up)
+@media (min-width: 1200px) and (max-width: 1400px) {
+  .login-container {
+    min-height: calc(100vh - 50px);
+  }
+  .info-holder {
+    width: 62%;
+  }
+  .form-holder {
+    width: calc(62% - 4px);
+  }
+}
+
+@media (min-width: 1400px) and (max-width: 1600px) {
+  .login-container {
+    min-height: calc(100vh - 50px);
+  }
+  .info-holder {
+    width: 55%;
+  }
+  .form-holder {
+    width: calc(62% - 4px);
   }
 
-  .website-logo {
-    position: fixed;
+  .form-holder .form-content .form-items {
+    max-width: 380px;
+  }
+  .form-content h3 {
+    font-size: 34px;
+  }
+  .form-content label {
+    font-size: 16px;
+    margin-top: 42px;
+  }
+  .form-content input {
+    font-size: 18px;
+    height: 40px;
+  }
+  .form-content .form-button .ibtn {
+    font-size: 16px;
+    height: 38px;
+    width: 130px;
+  }
+  .field-container .errorIcon {
+    top: 78px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .login-container {
+    min-height: calc(100vh - 50px);
+  }
+  .info-holder {
+    width: 55%;
+  }
+  .form-holder {
+    width: calc(62% - 4px);
+  }
+
+  .form-holder .form-content .form-items {
+    max-width: 540px;
+  }
+  .form-content h3 {
+    font-size: 44px;
+  }
+  .form-content label {
+    font-size: 18px;
+    margin-top: 42px;
+  }
+  .form-content input {
+    font-size: 20px;
+    height: 50px;
+  }
+  .form-content .form-button .ibtn {
+    font-size: 18px;
+    height: 44px;
+    width: 135px;
+  }
+
+  .field-container .errorIcon {
+    top: 83px;
   }
 }
 
 @include media-breakpoint-down(md) {
-  .img-holder {
+  .info-holder {
     display: none;
   }
 
   .form-holder {
     margin-left: 0;
-  }
-
-  .form-holder .form-content {
-    padding: 125px 60px 60px;
   }
 
   .website-logo {

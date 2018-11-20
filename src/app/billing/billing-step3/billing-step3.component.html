@@ -1,0 +1,54 @@
+<div class="billingModelContainer">
+  <div class="bm-header"><b>Single Billing Models</b></div>
+  <form #f="ngForm" (ngSubmit)="f.valid && onSubmit(f)">
+    <div class="bm-main flex-center-center">
+      <div class="billingBoxCont">
+        <div class="row">
+          <div class="col-xs-12 col-sm-8 col-md-8">
+            <label>Amount charged</label>
+            <div class="row ">
+              <div class="col-xs-12 col-sm-3 col-md-3">
+                <select
+                  name="rupees"
+                  [(ngModel)]="model.rupees"
+                  #rupees="ngModel"
+                  required
+                  [ngClass]="{ 'is-invalid': f.submitted && rupees.errors?.required }"
+                >
+                  <option *ngFor="let item of selectOption" [selected]="item.value === 0" [ngValue]="item.label">{{
+                    item.label
+                  }}</option>
+                </select>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-6 amountinput">
+                <input
+                  class="input"
+                  oninput="this.value = this.value.replace(/[^0-9.]/g, '').replace(/(\..*)\./g, '$1');"
+                  id="amount"
+                  placeholder="$ 0.00"
+                  name="amount"
+                  [(ngModel)]="model.amount"
+                  #amount1="ngModel"
+                  required
+                  [ngClass]="{ 'is-invalid': f.submitted && amount1.errors?.required }"
+                />
+                <div *ngIf="f.submitted">
+                  <div class="notifyMsg" [hidden]="!amount1.errors?.required">Amount is required!</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <img src="assets/images/Single_billing.png" class="singleimg" />
+          </div>
+
+          <div class="col-xs-12 col-sm-12 col-md-12">
+            <button type="reset" routerLink="/billing/step2" class="backbtn">Back</button>
+            <button type="submit" class="continuebtn">Continue</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>

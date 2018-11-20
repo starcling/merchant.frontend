@@ -1,0 +1,77 @@
+<div class="billingModelContainer">
+  <div class="bm-header"><b>Single + Recurring Billing Models</b></div>
+
+  <div class="bm-main flex-center-center">
+    <div class="billingBoxCont">
+      <label>GAS FUNDING FOR EACH SUBSCRIBED CUSTOMER</label>
+      <div>
+        <label>Frequency</label>
+        <div class="col-xs-12 col-sm-6 col-md-6">
+          <select name="transactions">
+            <option value="At the end of contract">At the end of contract</option>
+            <option value="On every transaction">On every transaction</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="col-xs-12 col-sm-10 col-md-10">
+        <table>
+          <tr>
+            <td class="row1">Transcation</td>
+            <td class="row2">Numberof recurrences</td>
+            <td class="row3">Estimaed Gas Cost/transation(ETH)</td>
+            <td class="row4">TotalEstimated Gas Cost(ETH)</td>
+          </tr>
+          <tr>
+            <td class="row1">Inital Charge</td>
+            <td class="row2"></td>
+            <td class="row3"></td>
+            <td class="row4"></td>
+          </tr>
+          <tr>
+            <td class="row1">Recurring Pull Transaction</td>
+            <td class="row2"></td>
+            <td class="row3"></td>
+            <td class="row4"></td>
+          </tr>
+          <tr>
+            <td class="row1">
+              Transfers from<br />
+              PullPayment Account to Treasury
+            </td>
+            <td class="row2"></td>
+            <td class="row3"></td>
+            <td class="row4"></td>
+          </tr>
+          <tr>
+            <td class="row1">Total</td>
+            <td class="row2"></td>
+            <td class="row3"></td>
+            <td class="row4 rowcolor"></td>
+          </tr>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <div class="Fundingtext">
+    <img src="assets/images/info.png" class="info" />
+    <label class="Fundinghead">Funding the PullPayment Accounts with Gas</label>
+    <label class="titleContent">
+      Every time a new customer subscribes to a billing model, the system creates a new PullPayment account. The
+      PullPayment account will continuously bill the customer according to the billing model’s parameters. The PMA
+      tokens will be kept in the PullPayment account until they are transferred to the Treasury.
+    </label>
+    <label class="titleContent">
+      Choose how often you want to transfer funds from all the PullPayment accounts associated with this billing model
+      to your Treasury. Depending on your choice, the specific amount of ETH is allocated for those recurring payments
+      to pay for the gas fees of the transfer to the Treasury.
+    </label>
+    <label class="tContent"> Learn more </label>
+  </div>
+
+  <div class="bm-footer">
+    <button type="reset" routerLink="/billing/step3/hybird" class="backbtn">Back</button>
+    <button type="submit" class="continuebtn" (click)="onPublish()">Publish</button>
+  </div>
+</div>

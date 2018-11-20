@@ -1,0 +1,80 @@
+<div class="billingModelContainer">
+  <div class="bm-header"><b>Choose Billing Model</b></div>
+  <form #f="ngForm" (ngSubmit)="f.valid && onSubmit(f)">
+    <div class="bm-main flex-center-center">
+      <div class="billingBoxCont">
+        <div class="row">
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <div class="billingBox">
+              <div class="boxHead">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-2 col-md-2">
+                    <input type="radio" value="Single" name="billing" [(ngModel)]="model.billing" />
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-6">
+                    <p>
+                      <b>Single<br /><span>PullPayment</span></b>
+                    </p>
+                  </div>
+                  <div class="col-xs-12 col-sm-4 col-md-4"><img src="assets/images/single.svg" /></div>
+                </div>
+              </div>
+              <div class="boxCont"><p>Access a one-time payment from your customers.</p></div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <div class="billingBox">
+              <div class="boxHead">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-2 col-md-2">
+                    <input type="radio" value="Recurring" name="billing" [(ngModel)]="model.billing" />
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-6">
+                    <p>
+                      <b>Recurring<br /><span>PullPayment</span></b>
+                    </p>
+                  </div>
+                  <div class="col-xs-12 col-sm-4 col-md-4"><img src="assets/images/recurring.svg" /></div>
+                </div>
+              </div>
+              <div class="boxCont">
+                <p>
+                  Create a recurring billing model to charge customer a fixed amount at a predefined interval.<br />
+                  <span class="fontstyle">Example,monthly subscription</span>
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-xs-12 col-sm-4 col-md-4">
+            <div class="billingBox">
+              <div class="boxHead">
+                <div class="row">
+                  <div class="col-xs-12 col-sm-2 col-md-2">
+                    <input type="radio" value="Single and Recurring" name="billing" [(ngModel)]="model.billing" />
+                  </div>
+                  <div class="col-xs-12 col-sm-6 col-md-6">
+                    <p>
+                      <b>Single + Recurring<br /><span>PullPayment</span></b>
+                    </p>
+                  </div>
+                  <div class="col-xs-12 col-sm-4 col-md-4"><img src="assets/images/single+recurring.svg" /></div>
+                </div>
+              </div>
+              <div class="boxCont">
+                <p>
+                  You can accept a single payment followed by a recurring payment.<br />
+                  <span class="fontstyle"
+                    >For example, this can be a registration fee followed by monthly membership.</span
+                  >
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="bs-footer"><button type="submit" [disabled]="!f.valid">Continue</button></div>
+  </form>
+</div>

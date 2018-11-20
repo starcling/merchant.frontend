@@ -1,0 +1,122 @@
+<section class="dashboardContainer">
+  <div class="row">
+    <div class="col">
+      <label>TREASURY</label>
+      <div class="pma-box active">
+        <div>
+          <h3>{{ treasuryCurrency ? treasuryCurrency : 'PMA' }}</h3>
+          <p>{{ treasuryBalance ? treasuryBalance : '0.0' }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <label>PULLPAYMENTS</label>
+      <div class="pma-box">
+        <div>
+          <h3>{{ pullPaymentsCurrency ? pullPaymentsCurrency : 'PMA' }}</h3>
+          <p>{{ pullPaymentsBalance ? pullPaymentsBalance : '0.0' }}</p>
+        </div>
+      </div>
+    </div>
+    <div class="col">
+      <label>GAS WALLET</label>
+      <div class="pma-box active">
+        <div>
+          <h3>{{ gasCurrency ? gasCurrency : 'ETH' }}</h3>
+          <p>{{ gasBalance ? gasBalance : '0.0' }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="qrCodeContainer">
+    <label>EXTERNAL WALLET FUNDING</label>
+    <div class="qrCont">
+      <!-- <img src="assets/images/qr-code.png" /> -->
+      <ngx-qrcode [(qrc-value)]="value"> </ngx-qrcode>
+      <div class="qrContents">
+        <p>Scan the QR Code to send funds to your Wallet and <br />refill your Transfer Gas tank</p>
+        <div class="qrCodeField">
+          <input type="text" value="{{value}}" #userinput />
+          <img src="assets/images/copy.png" (click)="copyInputMessage(userinput)" value="click to copy" />
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="transaction-table">
+    <div class="row">
+      <div class="col"><label>TRANSACTION HISTORY</label></div>
+      <div class="col ">
+        <div class="text-right">
+          <ul class="pagination pagination-sm">
+            <li class="page-item">
+              <a class="page-link" href="#"><img src="assets/images/arrow-r.png"/></a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item"><a class="page-link" href="#">2</a></li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item"><a class="page-link" href="#">4</a></li>
+            <li class="page-item"><a class="page-link" href="#">...</a></li>
+            <li class="page-item"><a class="page-link active" href="#">8</a></li>
+            <li class="page-item"><a class="page-link" href="#">9</a></li>
+            <li class="page-item">
+              <a class="page-link" href="#"><img src="assets/images/arrow-l.png"/></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <table class="table  table-responsive">
+      <thead>
+        <tr>
+          <th>Date</th>
+          <th>Billing Model</th>
+          <th>Status</th>
+          <th>TxHash</th>
+          <th>Customer ID</th>
+          <th>PullPayments Account Address</th>
+          <th>PMA Balance</th>
+        </tr>
+      </thead>
+      <tbody>
+        <!--
+          <tr *ngFor= let val of transactionHistorArray >
+            <td>{{val.date}}</td>
+            <td>{{val.billingModel}}</td>
+            <td>{{val.status}}</td>
+            <td (click)="txhash(val.TxHash)">{{val.TxHash}}</td>
+            <td>{{val.customerID}}</td>
+            <td>{{val.pullPaymentsAccountAddress}}</td>
+            <td>{{val.balance}}</td>
+          </tr>
+        -->
+        <tr>
+          <td>13 Jun</td>
+          <td>Gold</td>
+          <td>(2/6)</td>
+          <td (click)="txhash()">Oxdf4c18485dea496d6...</td>
+          <td>723487</td>
+          <td>Oxdf4c18485dea496d6...</td>
+          <td>230,023.76</td>
+        </tr>
+        <tr>
+          <td>13 Jun</td>
+          <td>Gold</td>
+          <td>(2/6)</td>
+          <td>Oxdf4c18485dea496d6...</td>
+          <td>723487</td>
+          <td>Oxdf4c18485dea496d6...</td>
+          <td>230,023.76</td>
+        </tr>
+        <tr>
+          <td>13 Jun</td>
+          <td>Gold</td>
+          <td>(2/6)</td>
+          <td>Oxdf4c18485dea496d6...</td>
+          <td>723487</td>
+          <td>Oxdf4c18485dea496d6...</td>
+          <td>230,023.76</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>

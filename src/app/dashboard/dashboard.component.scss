@@ -1,0 +1,121 @@
+.dashboardContainer {
+  height: auto;
+  padding: 24px 46px;
+  background-color: #ffffff;
+  label {
+    font-size: 13px;
+    margin-bottom: 5px;
+  }
+  .transaction-table {
+    margin-top: 50px;
+    label {
+      margin-bottom: 0px;
+    }
+    table {
+      border: 1px solid #c4c8d1;
+      thead {
+        width: 100%;
+        tr {
+          th {
+            font-size: 15px;
+            font-weight: normal;
+          }
+        }
+      }
+      tbody {
+        width: 100%;
+        tr {
+          td {
+            font-size: 14px;
+          }
+          background-color: #f4f6fb;
+        }
+      }
+    }
+  }
+  .pma-box {
+    width: 100%;
+    margin-bottom: 30px;
+    background-color: #d8e0ef;
+    height: 110px;
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    padding: 25px;
+    h3 {
+      font-size: 20px;
+      margin-bottom: 2px;
+      color: #333333;
+    }
+    p {
+      font-size: 18px;
+      margin-bottom: 0px;
+      color: #333333;
+    }
+  }
+  .pma-box.active {
+    background-color: #1c67f5;
+    h3 {
+      color: #ffffff;
+    }
+    p {
+      color: #ffffff;
+    }
+  }
+  .qrCodeContainer {
+    .qrCont {
+      margin-top: 10px;
+      img {
+        margin-right: 20px;
+        width: 120px;
+      }
+      .qrContents {
+        display: inline-block;
+        vertical-align: top;
+        position: relative;
+        height: 120px;
+        p {
+          font-size: 13px;
+          color: #9b9b9b;
+        }
+        .qrCodeField {
+          position: absolute;
+          bottom: 0px;
+          input {
+            width: 300px;
+            height: 40px;
+            padding: 0px 50px 0px 10px;
+            border: 1px solid #cccccc;
+          }
+          img {
+            height: 43px;
+            width: 43px;
+            position: absolute;
+            right: -3px;
+            margin-right: 0px;
+          }
+        }
+      }
+    }
+  }
+  ul.pagination {
+    margin-bottom: 6px;
+    float: right;
+    li {
+      padding: 6px 1px;
+      a {
+        border: none;
+        border-radius: 50%;
+      }
+      a.active {
+        background-color: #1c67f5;
+        color: #ffffff;
+      }
+    }
+  }
+  ul.pagination li:first-child,
+  ul.pagination li:last-child {
+    padding: 0px;
+  }
+}

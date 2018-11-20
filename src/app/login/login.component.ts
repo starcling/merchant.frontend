@@ -57,9 +57,10 @@ export class LoginComponent implements OnInit {
       .subscribe(
         result => {
           console.log('success', result);
-          this.route.queryParams.subscribe(params =>
-            this.router.navigate([params.redirect || '/'], { replaceUrl: true })
-          );
+          if (result.data.user.userID) {
+            localStorage.setItem('id', result.data.user.userID);
+          }
+          this.route.queryParams.subscribe(params => this.router.navigate(['/dashboard'], { replaceUrl: true }));
         },
         error => {
           log.debug(`Login error: ${error}`);

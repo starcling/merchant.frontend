@@ -24,7 +24,7 @@ const routes: Routes = [
     { path: 'billing/step3/hybrid', component: BillingHybridStep3Component },
     { path: 'billing/recurring/step4', component: BillingRecurringStep4Component },
     { path: 'billing/step4/hybrid', component: BillingHybirdStep4Component },
-    { path: 'billing/billimgmodeloverview', component: BillingModelOverviewComponent }
+    { path: 'billing/billingmodeloverview', component: BillingModelOverviewComponent }
   ])
 ];
 

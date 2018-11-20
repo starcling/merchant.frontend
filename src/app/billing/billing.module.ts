@@ -8,15 +8,15 @@ import { NgbModalConfig, NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { FormsModule } from '@angular/forms';
 import { BillingHybridStep3Component } from '@app/billing/billing-step3/billing-hybrid-step3/billing-hybrid-step3.component';
 import { BillingModelOverviewComponent } from '@app/billing/billing-model-overview/billing-model-overview.component';
-import { BillingHybirdStep4Component } from '@app/billing/billing-step4/billing-hybird-step4/billing-hybird-step4.component';
+// import { BillingHybirdStep4Component } from '@app/billing/billing-step4/billing-hybird-step4/billing-hybird-step4.component';
 @NgModule({
   declarations: [
     BillingComponent,
     BillingStep4Component,
     currencyPipe,
     BillingHybridStep3Component,
-    BillingModelOverviewComponent,
-    BillingHybirdStep4Component
+    BillingModelOverviewComponent
+    // BillingHybirdStep4Component
   ],
   imports: [CommonModule, BillingRoutingModule, FormsModule],
   providers: [currencyPipe]

@@ -83,7 +83,7 @@
             <td>{{val.date}}</td>
             <td>{{val.billingModel}}</td>
             <td>{{val.status}}</td>
-            <td>{{val.TxHash}}</td>
+            <td (click)="txhash(val.TxHash)">{{val.TxHash}}</td>
             <td>{{val.customerID}}</td>
             <td>{{val.pullPaymentsAccountAddress}}</td>
             <td>{{val.balance}}</td>

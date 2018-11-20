@@ -12,6 +12,7 @@ import { User } from '@app/models/User';
 export class BillingService {
   public actionUrl: string;
   public actionUrl1: string;
+  public billingModelUrl: string;
   public token: string;
   public user: any;
   public userID: string;
@@ -22,6 +23,7 @@ export class BillingService {
   constructor(private _http: HttpClient) {
     this.actionUrl = `${Constants.apiPrefix}pull-payment-models/`;
     this.actionUrl1 = `${Constants.apiPrefix}balance/all/`;
+    this.billingModelUrl = `${Constants.apiPrefix}pull-payment-models/id`;
   }
 
   public Getpull(): Observable<any> {
@@ -35,5 +37,9 @@ export class BillingService {
   public getPullPayment(): Observable<any> {
     console.log('url', this.actionUrl);
     return this._http.get(this.actionUrl1, { headers: this.headers });
+  }
+  public getByIdBillingModel(id): Observable<any> {
+    console.log('url', this.billingModelUrl);
+    return this._http.get(this.billingModelUrl + id, { headers: this.headers });
   }
 }

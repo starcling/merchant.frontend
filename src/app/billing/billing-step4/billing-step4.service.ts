@@ -11,6 +11,7 @@ import { User } from '@app/models/User';
 })
 export class BillingServiceCall {
   public actionUrl: string;
+  public step4recuuringactionUrl: string;
   private headers: HttpHeaders = new HttpHeaders({
     'Content-Type': 'application/json',
     'api-request-source': 'portal'
